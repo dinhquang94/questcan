@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="delete-category.aspx.cs" Inherits="cp_do_category_delete_category" %>

@@ -1,0 +1,209 @@
+﻿.footer {
+    padding: 30px 0px 50px 0px !important;
+    background: #1f1f1f;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+    .footer .team-title {
+        color: #c41d31;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 10px;
+        line-height: 1.5;
+    }
+
+    .footer p {
+        line-height: 2;
+        font-size: 13px;
+    }
+
+    .footer .links {
+        margin-top: 25px;
+        padding-left: 30px;
+        line-height: 41px;
+        border-left: 1px solid #2b2b2b;
+    }
+
+        .footer .links a {
+            color: #4d4d4d;
+        }
+
+    .footer .connect {
+        margin-top: 25px;
+        border-left: 1px solid #2b2b2b;
+        margin-top: 20px;
+    }
+
+        .footer .connect h5 {
+            margin: 4px 0px 2px 0px;
+        }
+
+        .footer .connect a {
+            color: #cf3239;
+        }
+
+        .footer .connect .social {
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+    .footer .instagram {
+        margin-top: 25px;
+        border-left: 1px solid #2b2b2b;
+    }
+
+        .footer .instagram .insta-pic img {
+            margin: 10px;
+            width: 60px;
+            height: 70px;
+            background-color: #404040;
+        }
+
+.underline {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #cf3239;
+}
+
+.copyright {
+    padding: 3px 0px 3px 0px;
+    background-color: #0a0a0a;
+    color: white;
+}
+
+    .copyright p {
+        padding: 3px 0px 3px 0px;
+        margin: 15px 0px 15px 0px;
+        text-align: left !important;
+        font-size: 12px;
+    }
+/* ===============================  */
+/* OUR PARTNERSHIPS */
+.partner {
+    background-color: #e8e8e8;
+    text-align: center;
+    padding: 40px 0px 90px 0px;
+    color: #242424;
+}
+
+    .partner h1 {
+        padding-bottom: 20px;
+    }
+
+    .partner h5 {
+        font-weight: 700;
+    }
+
+    .partner img {
+        background-color: white;
+    }
+
+    .partner .sponsor div {
+        padding-top: 20px;
+    }
+/* ================================ */
+/* PROMO */
+.promo .readmore {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.promo .more {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.show:hover .readmore {
+    opacity: 1;
+}
+
+.promo .show .btn-readmore {
+    border-radius: 15px;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    font-size: 14px;
+    background-color: #c92228;
+    color: white;
+    font-weight: 600;
+}
+/* ======================================= */
+/* ABOUT SECTION  */
+.about-head {
+    padding: 50px 0px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+    .about-head span {
+        margin-right: 20px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .about-head h1 {
+        color: #000000;
+    }
+
+.about-content {
+    width: auto;
+    padding: 15px;
+}
+
+    .about-content h4 {
+        font-size: 22px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        color: #7d7e80;
+        font-weight: 600;
+    }
+
+    .about-content .about-time {
+        font-size: 12px;
+        color: #f74040;
+        font-weight: 600;
+    }
+
+.cmt-like {
+    font-size: 14px;
+    color: #777778;
+    font-weight: 600;
+}
+
+.fix {
+    padding-top: 22px;
+}
+.fixs {
+    margin-top: 50px;
+}
+
+.btn-loadmore {
+    padding: 50px 0px;
+    text-align: center;
+}
+
+    .btn-loadmore button {
+        border-radius: 17px;
+        background-color: #c92228;
+        color: white;
+        border: none;
+        padding: 10px 20px 10px 20px;
+        font-size: 14px;
+        font-weight: 600;
+    }

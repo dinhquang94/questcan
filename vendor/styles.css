@@ -1,0 +1,368 @@
+﻿/*Homepage live section*/
+#home-live-section {
+    background-color: #242323;
+    color: #ffffff;
+    margin-top: 100px;
+}
+
+    #home-live-section .top-live-wrapper {
+        padding: 50px 0;
+        width: 100%;
+        float: left;
+    }
+
+    #home-live-section .content-live-wrapper {
+        width: 100%;
+        float: left;
+    }
+
+        #home-live-section .content-live-wrapper img {
+            width: 100%;
+        }
+
+    #home-live-section .section-title {
+        float: left;
+    }
+
+        #home-live-section .section-title .title img {
+            height: 70px;
+            width: 95px;
+        }
+
+        #home-live-section .section-title .title span {
+            text-transform: uppercase;
+            font-size: 32px;
+            font-weight: 800;
+            vertical-align: middle;
+            padding-left: 5px;
+        }
+
+    #home-live-section .next-link-wrapper {
+        float: right;
+    }
+
+        #home-live-section .next-link-wrapper .next-link {
+            line-height: 70px;
+        }
+
+        #home-live-section .next-link-wrapper .next-link-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            padding-left: 5px;
+        }
+
+        #home-live-section .next-link-wrapper .next-link-time {
+            color: #9e2e2e;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+@media only screen and (max-width: 1024px) {
+    #home-live-section .next-link-wrapper {
+        float: left;
+        clear: both;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #home-live-section .content-live-wrapper {
+        padding: 10px 50px 30px;
+    }
+
+    #home-live-section .next-link-wrapper .next-link-time {
+        font-size: 14px;
+    }
+
+    #home-live-section .next-link-wrapper .next-link-title {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #home-live-section .top-live-wrapper {
+        padding: 50px 10px 0;
+    }
+
+    #home-live-section .content-live-wrapper {
+        padding: 30px 10px 20px;
+    }
+
+    #home-live-section .next-link-wrapper .next-link-time {
+        float: left;
+        clear: both;
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    #home-live-section .next-link-wrapper .next-link {
+        line-height: unset;
+    }
+
+    #home-live-section .next-link-wrapper .next-link-title {
+        font-size: 11px;
+    }
+
+    #home-live-section .section-title .title img {
+        height: 56px;
+        width: auto;
+    }
+
+    #home-live-section .section-title .title span {
+        font-size: 24px;
+    }
+}
+/*End homepage live section*/
+/*Homepage video section*/
+#home-video-section {
+    background-color: #191919;
+    color: #ffffff;
+}
+
+    #home-video-section #video-list .video-thumb img {
+        width: 100%;
+        height: auto;
+    }
+
+    #home-video-section .section-title {
+        color: #fff;
+    }
+
+        #home-video-section .section-title .title {
+            line-height: 36px;
+        }
+
+            #home-video-section .section-title .title span {
+                font-size: 36px;
+                vertical-align: middle;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+
+    #home-video-section .section-description {
+        font-size: 14px;
+    }
+
+    #home-video-section .wrapper-control {
+        clear: both;
+        min-height: 40px;
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+        #home-video-section .wrapper-control .carousel-control-prev {
+            left: unset;
+            right: 25px;
+            width: 20px;
+        }
+
+        #home-video-section .wrapper-control .carousel-control-next-icon {
+            background-image: url('../img/arrow-square.png');
+        }
+
+        #home-video-section .wrapper-control .carousel-control-prev-icon {
+            background-image: url('../img/arrow.png');
+            height: 17px;
+            width: 9px;
+        }
+
+        #home-video-section .wrapper-control .carousel-control-next {
+            right: 0px;
+            width: 20px;
+        }
+/*End homepage video section*/
+/*Homepage season section*/
+#home-season-section {
+    background-color: #eaeaea;
+    color: #000000;
+    min-height: 20px;
+}
+
+    #home-season-section .wrapper-control {
+        clear: both;
+        min-height: 55px;
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+        #home-season-section .wrapper-control .carousel-control-prev {
+            right: unset;
+            left: 0px;
+            width: 20px;
+        }
+
+        #home-season-section .wrapper-control .carousel-control-next-icon {
+            background-image: url('../img/arrow-square.png');
+        }
+
+        #home-season-section .wrapper-control .carousel-control-prev-icon {
+            background-image: url('../img/arrow.png');
+            height: 17px;
+            width: 9px;
+        }
+
+        #home-season-section .wrapper-control .carousel-control-next {
+            right: unset;
+            width: 20px;
+            left: 25px;
+        }
+
+    #home-season-section #season-list .season-title img {
+        height: 36px;
+        width: auto;
+    }
+
+    #home-season-section #season-list .season-title span {
+        font-weight: 800;
+        font-size: 32px;
+        padding-left: 5px;
+    }
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 425px) {
+    .section-padding {
+        padding: 30px 10px 30px;
+    }
+
+    #home-season-section #season-list .season-title span {
+        font-weight: 600;
+        font-size: 22px;
+    }
+}
+/*End homepage season section*/
+
+/*Homepage person section*/
+#home-person-info {
+    background-image: url("../img/img-bg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #eaeaea;
+    background-size: cover;
+}
+
+    #home-person-info #person-list .avatar {
+        max-height: 620px;
+    }
+
+        #home-person-info #person-list .avatar img {
+            height: 100%;
+            margin: auto;
+        }
+
+    #home-person-info #person-list .info-wrapper {
+        float: right;
+        background: #fff;
+        margin-top: 10%;
+        border: solid 1px #fff;
+        border-radius: 20px;
+        padding: 10px;
+        max-width: 420px;
+    }
+
+        #home-person-info #person-list .info-wrapper table {
+            font-size: 16px;
+            width: 100%;
+        }
+
+            #home-person-info #person-list .info-wrapper table tr {
+                padding: 10px 5px;
+            }
+
+                #home-person-info #person-list .info-wrapper table tr td {
+                    width: 50%;
+                }
+
+                    #home-person-info #person-list .info-wrapper table tr td .icon img {
+                        width: 20px;
+                    }
+
+                    #home-person-info #person-list .info-wrapper table tr td .value {
+                        font-weight: 600;
+                    }
+
+        #home-person-info #person-list .info-wrapper .attribute {
+            padding-left: 10px;
+        }
+
+        #home-person-info #person-list .info-wrapper .read-more-info {
+            padding: 10px 20px;
+            background: #ca2128;
+            color: #ffffff;
+            border: solid 1px #ca2128;
+            border-radius: 44px;
+            font-size: 16px;
+            margin: 20px 0 30px;
+            float: left;
+        }
+
+        #home-person-info #person-list .info-wrapper .rank {
+            color: #ca2128;
+            font-size: 48px;
+            line-height: 48px;
+        }
+
+        #home-person-info #person-list .info-wrapper .name {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 48px;
+        }
+
+        #home-person-info #person-list .info-wrapper .description {
+            font-size: 16px;
+        }
+
+@media only screen and (max-width: 1024px) {
+    #home-person-info #person-list .avatar img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #home-person-info #person-list .info-wrapper {
+        float: unset;
+        margin: 20px auto;
+    }
+
+    #home-person-info #person-list .avatar {
+        margin: 10% 0;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #home-person-info {
+        background-position: inherit;
+        background-repeat: inherit;
+    }
+
+        #home-person-info #person-list .info-wrapper .read-more-info {
+            width: 100%;
+            text-align: center;
+        }
+}
+/*End homepage person section*/
+.section-padding {
+    padding: 30px 0 50px;
+}
+
+.rm-padding {
+    padding: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    .section-padding {
+        padding: 30px 50px 30px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .section-padding {
+        padding: 30px 10px 30px;
+    }
+}

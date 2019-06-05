@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="delete-task.aspx.cs" Inherits="cp_do_task_delete_task" %>

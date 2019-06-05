@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="delete-user.aspx.cs" Inherits="cp_do_user_delete_user" %>

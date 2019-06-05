@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="trungle8_questcan" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ducclassic.com;Initial Catalog=trungle8_questcan;User ID=trungle8_questcan" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QuestCanConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AdsTBx" Member="AdsTBxes">
+    <Type Name="AdsTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="picture" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="store_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="StoreTBx_AdsTBx" Member="StoreTBx" ThisKey="store_id" OtherKey="id" Type="StoreTBx" IsForeignKey="true" />
+      <Association Name="UserTBx_AdsTBx" Member="UserTBx" ThisKey="user_id" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTypeTBx" Member="UserTypeTBxes">
+    <Type Name="UserTypeTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UserTypeTBx_TaskTBx" Member="TaskTBxes" ThisKey="id" OtherKey="usertype_id" Type="TaskTBx" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CategoryTBx" Member="CategoryTBxes">
+    <Type Name="CategoryTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="typecategory" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer_Store" Member="Customer_Stores">
+    <Type Name="Customer_Store">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="store_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="StoreTBx_Customer_Store" Member="StoreTBx" ThisKey="store_id" OtherKey="id" Type="StoreTBx" IsForeignKey="true" />
+      <Association Name="UserTBx_Customer_Store" Member="UserTBx" ThisKey="user_id" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeviceTBx" Member="DeviceTBxes">
+    <Type Name="DeviceTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="player_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UserTBx_DeviceTBx" Member="UserTBx" ThisKey="user_id" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+      <Association Name="UserTBx_DeviceTBx1" Member="UserTBx1" ThisKey="user_id" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PageTBx" Member="PageTBxes">
+    <Type Name="PageTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="create_day" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="picture" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhotoTBx" Member="PhotoTBxes">
+    <Type Name="PhotoTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="create_day" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_store" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="long" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="StoreTBx_PhotoTBx" Member="StoreTBx" ThisKey="id_store" OtherKey="id" Type="StoreTBx" IsForeignKey="true" />
+      <Association Name="UserTBx_PhotoTBx" Member="UserTBx" ThisKey="id_user" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+      <Association Name="UserTBx_PhotoTBx1" Member="UserTBx1" ThisKey="id_user" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staff_Store" Member="Staff_Stores">
+    <Type Name="Staff_Store">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="store_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="StoreTBx_Staff_Store" Member="StoreTBx" ThisKey="store_id" OtherKey="id" Type="StoreTBx" IsForeignKey="true" />
+      <Association Name="UserTBx_Staff_Store" Member="UserTBx" ThisKey="user_id" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StoreTBx" Member="StoreTBxes">
+    <Type Name="StoreTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="open_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="close_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="long" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="StoreTBx_AdsTBx" Member="AdsTBxes" ThisKey="id" OtherKey="store_id" Type="AdsTBx" />
+      <Association Name="StoreTBx_Customer_Store" Member="Customer_Stores" ThisKey="id" OtherKey="store_id" Type="Customer_Store" />
+      <Association Name="StoreTBx_PhotoTBx" Member="PhotoTBxes" ThisKey="id" OtherKey="id_store" Type="PhotoTBx" />
+      <Association Name="StoreTBx_Staff_Store" Member="Staff_Stores" ThisKey="id" OtherKey="store_id" Type="Staff_Store" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskTBx" Member="TaskTBxes">
+    <Type Name="TaskTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="point" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="start_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="end_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="usertype_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lat" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="long" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Association Name="TaskTBx_UserTaskTBx" Member="UserTaskTBxes" ThisKey="id" OtherKey="task_id" Type="UserTaskTBx" />
+      <Association Name="UserTypeTBx_TaskTBx" Member="UserTypeTBx" ThisKey="usertype_id" OtherKey="id" Type="UserTypeTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTaskTBx" Member="UserTaskTBxes">
+    <Type Name="UserTaskTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="task_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TaskTBx_UserTaskTBx" Member="TaskTBx" ThisKey="task_id" OtherKey="id" Type="TaskTBx" IsForeignKey="true" />
+      <Association Name="UserTBx_UserTaskTBx" Member="UserTBx" ThisKey="user_id" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTBx" Member="UserTBxes">
+    <Type Name="UserTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="birthday" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="create_day" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_loginday" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="token" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="credit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="typeuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UserTBx_AdsTBx" Member="AdsTBxes" ThisKey="id" OtherKey="user_id" Type="AdsTBx" />
+      <Association Name="UserTBx_Customer_Store" Member="Customer_Stores" ThisKey="id" OtherKey="user_id" Type="Customer_Store" />
+      <Association Name="UserTBx_DeviceTBx" Member="DeviceTBxes" ThisKey="id" OtherKey="user_id" Type="DeviceTBx" />
+      <Association Name="UserTBx_DeviceTBx1" Member="DeviceTBxes1" ThisKey="id" OtherKey="user_id" Type="DeviceTBx" />
+      <Association Name="UserTBx_PhotoTBx" Member="PhotoTBxes" ThisKey="id" OtherKey="id_user" Type="PhotoTBx" />
+      <Association Name="UserTBx_PhotoTBx1" Member="PhotoTBxes1" ThisKey="id" OtherKey="id_user" Type="PhotoTBx" />
+      <Association Name="UserTBx_Staff_Store" Member="Staff_Stores" ThisKey="id" OtherKey="user_id" Type="Staff_Store" />
+      <Association Name="UserTBx_UserTaskTBx" Member="UserTaskTBxes" ThisKey="id" OtherKey="user_id" Type="UserTaskTBx" />
+    </Type>
+  </Table>
+</Database>

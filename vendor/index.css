@@ -1,0 +1,568 @@
+﻿body {
+    height: 2000px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #eaeaea;
+}
+div#card-2 {
+    border-radius: 10px 0 0 10px;
+}
+
+div#card-3 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-2-icon-angle-left {
+    color: #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    float: left;
+    min-height: 100%;
+    width: 5%;
+    padding: 20% 0;
+}
+
+.card-2-content-right {
+    width: 95%;
+    float: left;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1385px;
+    }
+}
+
+div {
+    font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.nopadding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.nomargin {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.top-match {
+    min-height: 232px;
+    padding: 10px 0;
+}
+
+    .top-match .cart-body {
+        height: 165px;
+    }
+
+    .top-match .card {
+        display: block;
+        border-radius: 3px;
+        box-shadow: 0 0 14px -4px #BBB;
+        background-color: transparent;
+    }
+
+    .top-match img {
+        width: 100%;
+    }
+
+    .top-match span {
+        font-size: 14px;
+        font-weight: bold;
+        color: #666;
+    }
+
+.navbar {
+    height: 115px;
+    z-index: 9;
+    background: #2727278c;
+}
+
+.navbar-nav {
+    margin-left: 30px;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show > .nav-link,
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFF;
+}
+
+.navbar-nav .nav-item {
+    padding: 20px 28px 0 0px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #EEE;
+}
+
+header.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #710303ad;
+    opacity: 1;
+}
+
+header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
+    padding: 369px 0;
+}
+
+    header.masthead .post-heading h1 {
+        font-size: 62px;
+        text-transform: uppercase;
+    }
+
+    header.masthead .post-heading .subheading {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+span.cle {
+    color: #760b0d;
+    font-size: 14px;
+}
+
+span.number-card-2 {
+    color: black;
+    font-size: 14px;
+}
+
+span.dal {
+    color: #2d8cc4;
+    font-size: 14px;
+}
+
+.lbl-card {
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 0px 0 5px 10px;
+    width: 60%;
+}
+
+.lbl-card-2 {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 0px 0 5px 10px;
+    text-align: center;
+    width: 40%;
+}
+
+.lbl-card-3 {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 0px 0 5px 10px;
+    text-align: center;
+    width: 60%;
+}
+
+.lbl-day {
+    font-size: 12px;
+    color: gray;
+    font-weight: bold;
+    padding: 15px 10px;
+    margin: 0;
+}
+
+span.lbl-l {
+    color: red;
+    font-size: 14px;
+}
+
+.main {
+    float: left;
+    margin: 0;
+    width: 100%;
+}
+
+.container-left {
+    width: 90%;
+    overflow: unset;
+    float: left;
+}
+
+.lbl-day-right {
+    font-size: 12px;
+    color: gray;
+    font-weight: bold;
+    padding: 15px 0 15px 15px;
+}
+
+.container-right {
+    width: 408px;
+}
+
+.lbl-cart-right {
+    padding: 0 0 5px 15px;
+    width: 40%;
+}
+
+span.mil {
+    color: green;
+}
+
+span.tv {
+    background: gray;
+    color: white;
+    padding: 3px;
+    font-size: 11px;
+}
+
+.row card-2-custom {
+    margin: 0;
+}
+
+.card-2-icon-angle-right {
+    border-left: 1px solid #dfdfdf;
+    color: #dfdfdf;
+    float: left;
+    min-height: 100%;
+    width: 5%;
+    padding: 20% 0;
+}
+
+.btn-find-seat {
+    background: #870038;
+}
+
+.btn-find-seat {
+    background: #870038;
+    color: white;
+    font-size: 12px;
+    width: auto;
+    padding: 7px 30px 7px 30px;
+    border-radius: 5px;
+    margin: 10px 0 0 20px;
+}
+
+.position-banner {
+    background: url(../img/img-2.png) no-repeat;
+    background-size: auto;
+}
+
+.top-match .card-2-custom {
+    height: 180px;
+}
+
+.top-match .sub-card {
+    margin-top: 15px;
+}
+
+.top-match .lbl-link-watch-game {
+    color: #870038;
+    float: right;
+}
+
+.top-match .main-card-content {
+    height: 80px;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+    .top-match .main-card-content .logo {
+        padding: 5px 20px;
+        width: 33.33%;
+    }
+
+        .top-match .main-card-content .logo span {
+            line-height: 60px;
+            vert-align: middle;
+            text-align: center;
+        }
+
+    .top-match .main-card-content .score {
+        text-align: center;
+        vertical-align: middle;
+        line-height: 70px;
+        width: 33.33%;
+    }
+
+.top-match .main-card-content-bottom .name {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0;
+    width: 33.33%;
+}
+
+    .top-match .main-card-content-bottom .name span {
+        color: #000000;
+    }
+
+.top-match .main-card-content-bottom {
+    border-right: 1px solid #dfdfdf;
+}
+
+.top-match .card-body-right p {
+    padding: 5px 0 0 20px;
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
+}
+
+.top-match .card-2-content-right .lbl-top, .top-match .card-2-content-right .lbl-bottom {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-collapse.collapse.show {
+    background: #272727;
+}
+
+.banner-type1 {
+    min-height: 345px;
+}
+
+.banner-type2 {
+    min-height: 331px;
+}
+
+.banner-next {
+    text-align: right;
+    margin: auto;
+}
+
+.banner-prev {
+    text-align: left;
+    margin: auto;
+}
+
+#about-heat .col {
+    width: 20%;
+    float: left;
+    min-height: 650px;
+}
+
+#about-heat .col-center {
+    background-color: #f0f0f0;
+}
+
+#about-heat .col-center1 {
+    background-color: #e5e6e8;
+}
+
+#about-heat .col.pl-0.pr-0 img.avatar {
+    width: 100%;
+}
+
+#about-heat .heat-list-wrapper {
+    float: left;
+}
+
+#about-heat .about-head-wrapper {
+    padding: 50px 0;
+}
+
+#about-heat .social-link {
+    padding: 50px 0;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+    #about-heat .social-link span {
+        padding-right: 25px;
+        display: inline-table;
+    }
+
+#about-heat .section-title {
+    padding: 50px 0;
+    text-align: right;
+}
+
+#partner .partner .vip img {
+    width: 100%;
+}
+.avatar{
+    width:100%
+}
+.readmore1 {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 100px
+}
+.btn-readmore {
+    background: #f84040;
+    border-color: red;
+    color: white;
+}
+.post-heading {
+    margin-left: 97px;
+    margin-top: -100px;
+}
+.layout-img {
+    position: relative;
+    margin-top: -395px;
+}
+.more4 {
+    margin-top: 145px;
+}
+.more5 {
+    margin-top: 300px;
+}
+.prev {
+    margin: 10px
+}
+.prev {
+    margin: 10px
+}
+.next {
+    margin: 10px
+}
+.video {
+    position: absolute;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 20px;
+    top: 45%;
+    left: 48%;
+    background: red;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.camera {
+    position: absolute;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 10px;
+    top: 3%;
+    left: 75%;
+    background: red;
+}
+.youtube {
+    position: absolute;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 10px;
+    top: 3%;
+    left: 75%;
+    background: red;
+}
+.replay {
+    position: absolute;
+    border: 2px solid gray;
+    border-radius: 50%;
+    padding: 5px;
+    top: 33%;
+    left: 80%;
+    background: gray;
+}
+.replay-youtube {
+    position: absolute;
+    border: 2px solid gray;
+    border-radius: 50%;
+    padding: 5px;
+    left: 80%;
+    background: gray;
+    top: 60%;
+}
+#icon {
+    color: white
+}
+
+@media only screen and (max-width: 1024px) {
+    .sub-card {
+        padding: 0px;
+    }
+
+    .navbar {
+        height: auto;
+    }
+
+    .partner h5 {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .top-match .sub-card {
+        margin-top: 0px;
+        padding: 10px 0;
+    }
+
+    .card-2-icon-angle-left {
+        padding: 75px 0 0 10px;
+    }
+
+    .lbl-card {
+        padding-left: 20px;
+    }
+
+    .card-2-icon-angle-right {
+        padding: 75px 0 0 10px;
+    }
+
+    .btn-find-seat {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .top-match .cart-body {
+        height: auto;
+    }
+
+    .banner-prev, .banner-next {
+        display: none;
+    }
+
+    .banner-type3 {
+        min-height: 500px;
+        background-position: top center !important;
+    }
+
+    #about-heat .col {
+        width: 33.33%;
+    }
+
+    header.masthead .post-heading h1 {
+        font-size: 44px;
+    }
+
+    header.masthead .post-heading .subheading {
+        font-size: 22px;
+    }
+
+    #partner .partner .vip {
+        padding-bottom: 10px;
+    }
+
+    #about-heat .section-title h1 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #about-heat .col {
+        width: 50%;
+    }
+
+    header.masthead .post-heading h1 {
+        font-size: 36px;
+    }
+
+    header.masthead .post-heading .subheading {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    #about-heat .section-title {
+        padding: 10px 0;
+        text-align: left;
+    }
+
+    #about-heat .social-link {
+        padding: 30px 0 10px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    #about-heat .col {
+        width: 100%;
+    }
+}

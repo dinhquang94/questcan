@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="delete-page.aspx.cs" Inherits="cp_do_page_delete_page" %>
