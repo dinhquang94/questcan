@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="edit-usertype.aspx.cs" Inherits="cp_do_usertype_edit_usertype" %>
