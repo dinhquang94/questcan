@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="add-store.aspx.cs" Inherits="cp_do_store_add_store" %>
