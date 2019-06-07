@@ -51,7 +51,7 @@
                 $(input).prop("disabled", true);
                 //ShowLoading();
                 $.ajax({
-                    url: "/cp/do/page/delete-pages.aspx",
+                    url: "/cp/do/page/delete-page.aspx",
                     method: "post",
                     data: {
                         id: id
