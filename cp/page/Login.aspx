@@ -48,36 +48,8 @@
 <script>
 
     function btnLogin() {
-        location.href = "user/user.aspx";
+        location.href = "user";
     }
-    //$("#btnLogin").click(function () {
-
-       
-        //    $.ajax({
-        //        method: 'post',
-        //        url: '/cp/do/admin/login.aspx',
-        //        data: {
-        //            username: $("#txtEmail").val(),
-        //            password: $("#txtPassword").val()
-        //        },
-        //        success: function (data) {
-        //            $(this).prop("disabled", true);
-        //            data = JSON.parse(data);
-        //            if (data.success == -1) {
-        //                console.log(data.error);
-        //                alert("Error. Please try again");
-        //            } else if (data.success == 0) {
-        //                alert(data.message);
-        //            } else {
-        //                location.href = "/cp/page/news/news.aspx";
-        //            }
-        //        },
-        //        error: function (error) {
-        //            $(this).prop("disabled", true);
-        //            console.log(error);
-        //            alert("Error. Please try again");
-        //        }
-        //    });
-        //});
+  
     
 </script>

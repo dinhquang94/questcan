@@ -153,6 +153,20 @@
                     <span>USERTASK</span>
                  </a>
             </li>  
+        <li class="nav-item <%if (name.Contains("player"))
+                {%>active<%}%>">
+                <a class="nav-link" href="player">
+                   <i class="fab fa-confluence"></i>
+                    <span>PLAYER</span>
+                 </a>
+            </li> 
+        <li class="nav-item <%if (name.Contains("step"))
+                {%>active<%}%>">
+                <a class="nav-link" href="step">
+                   <i class="fab fa-confluence"></i>
+                    <span>STEP</span>
+                 </a>
+            </li> 
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -273,34 +287,17 @@
     </script>
     <script>
 
-        //function logout()
-        //{
-        //      $.ajax({
-        //    method: 'post',
-        //    url: '/cp/do/admin/logout.aspx',
-        //    data: {
-               
-        //    },
-        //    success: function (data) {
-        //        $(this).prop("disabled", true);
-        //        data = JSON.parse(data);
-        //        if (data.success == -1) {
-        //            console.log(data.error);
-        //            alert("Error. Please try again");
-        //        } else if (data.success == 0) {
-        //            alert(data.message);
-        //        } else {
-        //            alert("Success");
-        //            location.href = "/cp/Login.aspx";
-        //        }
-        //    },
-        //    error: function (error) {
-        //        $(this).prop("disabled", true);
-        //        console.log(error);
-        //        alert("Error. Please try again");
-        //    }
-        //});
-        //}
+        function logout()
+        {
+               $.post("/cp/do/admin/logout-admin.ashx", {},
+        function (data) {
+            if (data == 1) {
+                location.href = "home";
+            } else {
+                alertify.alert(data);
+            }
+        })
+        }
     </script>
 </body>
 </html>
