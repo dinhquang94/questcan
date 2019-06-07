@@ -153,6 +153,20 @@
                     <span>USERTASK</span>
                  </a>
             </li>  
+        <li class="nav-item <%if (name=="staff"||name=="add-staff"||name=="edit-staff" )
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/staff/staff.aspx">
+                   <i class="fab fa-confluence"></i>
+                    <span>STAFF</span>
+                 </a>
+            </li>  
+          <li class="nav-item <%if (name=="customer"||name=="add-customer"||name=="edit-customer" )
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/customer/customer.aspx">
+                   <i class="fab fa-confluence"></i>
+                    <span>CUSTOMER</span>
+                 </a>
+            </li>  
       <!-- Divider -->
       <hr class="sidebar-divider">
 
