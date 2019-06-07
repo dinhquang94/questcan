@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="trungle8_fundice" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ducclassic.com;Initial Catalog=trungle8_fundice;Persist Security Info=True;User ID=trungle8_questcan" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="trungle8_fundiceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PlayerTBx" Member="PlayerTBxes">
+    <Type Name="PlayerTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_step" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="curent_step" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RollHistoryTBx" Member="RollHistoryTBxes">
+    <Type Name="RollHistoryTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dice_point" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="start_step" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="end_step" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StepTBx" Member="StepTBxes">
+    <Type Name="StepTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="step_number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="effect" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

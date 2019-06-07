@@ -10,11 +10,14 @@ public partial class cp_do_user_delete_user : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        try { 
+        try {
+        PlayerManager PL = new PlayerManager();
         UserManager UM = new UserManager();
-        UserTBx user = new UserTBx();
         int id = Convert.ToInt32(Request["id"]);
-        user = UM.GetByID(id);
+         PlayerTBx player = PL.GetByUserID(id);
+         player.status = -1;
+         PL.Save();
+        UserTBx user = UM.GetByID(id);
         user.status = -1;
         UM.Save();
         Response.Write(JsonConvert.SerializeObject(new
