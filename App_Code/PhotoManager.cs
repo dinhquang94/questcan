@@ -30,6 +30,6 @@ public class PhotoManager
     }
     public List<PhotoTBx> GetList()
     {
-        return DB.PhotoTBxes.Where(e => e.status).ToList();
+        return DB.PhotoTBxes.ToList();
     }
 }

@@ -145,6 +145,13 @@
                    <i class="fab fa-confluence"></i>
                     <span>USERTYPE</span>
                  </a>
+            </li>
+        <li class="nav-item <%if (name.Contains("usertask"))
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/usertask/usertask.aspx">
+                   <i class="fab fa-confluence"></i>
+                    <span>USERTASK</span>
+                 </a>
             </li>  
       <!-- Divider -->
       <hr class="sidebar-divider">
