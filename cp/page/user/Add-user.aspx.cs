@@ -7,8 +7,10 @@ using System.Web.UI.WebControls;
 
 public partial class cp_page_user_Add_user : System.Web.UI.Page
 {
+    public List<UserTypeTBx> listtype;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        UsertypeManager UM = new UsertypeManager();
+        listtype = UM.GetList();
     }
 }

@@ -97,56 +97,56 @@
       </div>--%>
 
       <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item <%if (name.Contains("user"))
+        <li class="nav-item <%if (name=="user"||name=="add-user"||name=="edit-user")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/user/user.aspx">
                    <i class="fa fa-users"></i>
                     <span>USERS</span>
                 </a>
             </li>
-        <li class="nav-item <%if (name.Contains("category"))
+        <li class="nav-item <%if (name=="category"||name=="add-category"||name=="edit-category")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/category/category.aspx">
                    <i class="fas fa-book"></i>
                     <span>CATEGORY</span>
                 </a>
             </li>
-            <li class="nav-item <%if (name.Contains("pages"))
+            <li class="nav-item <%if (name=="pages"||name=="add-pages"||name=="edit-pages")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/pages/pages.aspx">
                     <i class="fas fa-ticket-alt"></i>
                     <span>PAGES</span>
                 </a>
             </li>
-            <li class="nav-item <%if (name.Contains("task"))
+            <li class="nav-item <%if (name=="task"||name=="add-task"||name=="edit-task")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/task/task.aspx">
                    <i class="fa fa-clock"></i>
                    <span>TASK</span>
                 </a>
             </li>
-            <li class="nav-item <%if (name.Contains("ads"))
+            <li class="nav-item <%if (name=="ads"||name=="add-ads"||name=="edit-ads")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/ads/ads.aspx">
                    <i class="fab fa-confluence"></i>
                     <span>ADVERTISE</span>
                  </a>
             </li>
-         <li class="nav-item <%if (name.Contains("store"))
+         <li class="nav-item <%if (name=="store"||name=="add-store" ||name=="edit-store")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/store/store.aspx">
                    <i class="fab fa-confluence"></i>
                     <span>STORE</span>
                  </a>
             </li>
-           <li class="nav-item <%if (name.Contains("usertype"))
+           <li class="nav-item <%if (name=="usertype"||name=="add-usertype"||name=="edit-usertype")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/usertype/usertype.aspx">
                    <i class="fab fa-confluence"></i>
                     <span>USERTYPE</span>
                  </a>
             </li>
-        <li class="nav-item <%if (name.Contains("usertask"))
+        <li class="nav-item <%if (name=="usertask"||name=="add-usertask"||name=="edit-usertask" )
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/usertask/usertask.aspx">
                    <i class="fab fa-confluence"></i>

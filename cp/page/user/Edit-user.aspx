@@ -52,8 +52,13 @@
         <label>Type User</label>
         <%--<input type="text" id="txtOrder" class="form-control" />--%>
          <select id="txttypeuser" class="form-control"> 
-                 <option <% if (user.typeuser_id == 0) { %>selected="selected" <% } %>  value="0">Employeer</option>
-                 <option  <% if (user.typeuser_id == 1) { %>selected="selected" <% } %> value="1">Customer</option>
+                <%for (int j = 0; j < listype.Count; j++)
+                { %>
+            <option value="<%=listype[j].id%>" <% if (listype[j].id == user.typeuser_id)
+ 
+         { %>selected<%} %> ><%=listype[j].name%> </option>
+ 
+        <%}%>
          </select>
     </div>
 

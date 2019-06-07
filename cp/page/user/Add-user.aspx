@@ -51,8 +51,12 @@
         <label>Type User</label>
         <%--<input type="text" id="txtOrder" class="form-control" />--%>
          <select id="txttypeuser" class="form-control">
+             <%for (int i = 0; i < listtype.Count; i++) {%>
+
+             <option value="<%=listtype[i].id %>"><%=listtype[i].name %></option>
+
+                 <%} %>
                  <option value="0">Employeer</option>
-                 <option value="1">Customer</option>
          </select>
     </div>
 
