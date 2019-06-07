@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="edit-photo.aspx.cs" Inherits="cp_do_photo_edit_photo" %>
