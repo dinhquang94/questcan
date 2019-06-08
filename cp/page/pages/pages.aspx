@@ -18,7 +18,7 @@
                 <th class="text-center">ID</th>
                 <th class="text-center">Title</th>
                 <%--<th class="text-center">Photo</th>--%>
-                <th class="text-center">Description</th>
+              <%--  <th class="text-center">Description</th>--%>
                 <th class="text-center">CreateDay</th>  
                 <th colspan="2" class="text-center">Action</th>
             </tr>
@@ -30,7 +30,7 @@
               <%-- <td>
                     <img src="<%=listpage[i].picture %>" width="50%"/>
                 </td>--%>
-                <td><%=listpage[i].description%></td>
+               <%-- <td><%=listpage[i].description%></td>--%>
                 <td><%=listpage[i].create_day%></td>
                 <td class="text-center">
                     <a class="btn btn-info" href="/cp/page/pages/Edit-pages.aspx?id=<%=listpage[i].id %>">

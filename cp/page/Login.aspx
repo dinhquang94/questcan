@@ -12,7 +12,7 @@
     <p></p>
     <div class="row">
         <div class="col-xs-12">
-            <h2>Quest Can</h2>
+            <h2>SaiGon Heat</h2>
 
             <!---- Partner Login Block --->
             <div class="row">
@@ -32,7 +32,7 @@
                                 <input class="form-control" placeholder="Password" id="txtPassword" type="password" />
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-success btn-lg btn-block" id="btnLogin" onclick="btnLogin()" >Sign in</button>
+                                <button class="btn btn-success btn-lg btn-block" id="btnLogin">Sign in</button>
                             </div>
                         </div>
                     </div>
@@ -46,10 +46,34 @@
 </div>
 <div id="result"></div>
 <script>
+    $("#btnLogin").click(function () {
+        
 
-    function btnLogin() {
-        location.href = "user";
-    }
-  
-    
+        $.ajax({
+            method: 'post',
+            url: '/cp/do/admin/login.aspx',
+            data: {
+                username: $("#txtEmail").val(),
+                password: $("#txtPassword").val()
+            },
+            success: function (data) {
+                $(this).prop("disabled", true);
+                data = JSON.parse(data);
+                if (data.success == -1) {
+                    console.log(data.error);
+                    alert("Error. Please try again");
+                } else if (data.success == 0) {
+                    alert(data.message);
+                } else {
+                    location.href = "/cp/page/user/user.aspx";
+                }
+            },
+            error: function (error) {
+                $(this).prop("disabled", true);
+                console.log(error);
+                alert("Error. Please try again");
+            }
+        });
+    });
+
 </script>
