@@ -15,14 +15,6 @@
       <Association Name="UserTBx_AdsTBx" Member="UserTBx" ThisKey="user_id" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.UserTypeTBx" Member="UserTypeTBxes">
-    <Type Name="UserTypeTBx">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="UserTypeTBx_TaskTBx" Member="TaskTBxes" ThisKey="id" OtherKey="usertype_id" Type="TaskTBx" />
-    </Type>
-  </Table>
   <Table Name="dbo.CategoryTBx" Member="CategoryTBxes">
     <Type Name="CategoryTBx">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -157,6 +149,25 @@
       <Association Name="UserTBx_PhotoTBx1" Member="PhotoTBxes1" ThisKey="id" OtherKey="id_user" Type="PhotoTBx" />
       <Association Name="UserTBx_Staff_Store" Member="Staff_Stores" ThisKey="id" OtherKey="user_id" Type="Staff_Store" />
       <Association Name="UserTBx_UserTaskTBx" Member="UserTaskTBxes" ThisKey="id" OtherKey="user_id" Type="UserTaskTBx" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserTypeTBx" Member="UserTypeTBxes">
+    <Type Name="UserTypeTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UserTypeTBx_TaskTBx" Member="TaskTBxes" ThisKey="id" OtherKey="usertype_id" Type="TaskTBx" />
+    </Type>
+  </Table>
+  <Table Name="trungle8_questcan.GameTBx" Member="GameTBxes">
+    <Type Name="GameTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="banner" Type="System.String" DbType="NChar(200)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

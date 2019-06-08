@@ -167,7 +167,13 @@
                     <span>CUSTOMER</span>
                  </a>
             </li>  
-
+        <li class="nav-item <%if (name=="game"||name=="add-game"||name=="edit-game" )
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/game/game.aspx">
+                   <i class="fab fa-confluence"></i>
+                    <span>GAME</span>
+                 </a>
+            </li>  
         <li class="nav-item <%if (name.Contains("player"))
                 {%>active<%}%>">
                 <a class="nav-link" href="player">
