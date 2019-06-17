@@ -23,7 +23,7 @@
     </div>
 
       <div class="form-group">
-        <a class="btn btn-danger" href="/cp/page/user/user.aspx">Cancel</a>
+        <a class="btn btn-danger" href="/cp/page/step/step.aspx">Cancel</a>
         <button class="btn btn-info" id="i_submit" onclick="Submit(this)">Submit</button>
     </div>
 

@@ -27,7 +27,7 @@
                 <th class="text-center">Address</th>
                 <th class="text-center">Credit</th>
                 <th class="text-center">Last Login</th>
-                <th class="text-center">Create Day</th>
+              <%--  <th class="text-center">Create Day</th>--%>
                 <th colspan="2" class="text-center">Action</th>
             </tr>
              <%for (int i = listuser.Count - 1 ; i > -1; i-- )
@@ -40,11 +40,31 @@
                   <td><%=listuser[i].email%></td>
                   <td><%=listuser[i].phone%></td>
                   <td><%=listuser[i].birthday%></td>
-                  <td><%=listuser[i].typeuser_id%></td>
+
+
+                  <td>
+                      
+                      <%for (int j = 0; j < listtype.Count; j++) {%>
+                      
+                      
+                               <%if (listuser[i].typeuser_id == listtype[j].id) {%> 
+                      
+                                        <%=listtype[j].name %>
+                              <%}%>
+
+                      
+                      <%} %>
+                     
+                  </td>
+
+
+
+
+
                   <td><%=listuser[i].address%></td>
                   <td><%=listuser[i].credit%></td>
                   <td><%=listuser[i].last_loginday%></td>
-                  <td><%=listuser[i].create_day%></td>
+                 <%-- <td><%=listuser[i].create_day%></td>--%>
                   
                <%-- <td>
                     <img src="<%=listplayer[i].Image %>" width="100%" />

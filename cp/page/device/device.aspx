@@ -1,42 +1,40 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/cp/MasterPage.master"  AutoEventWireup="true" CodeFile="step.aspx.cs" Inherits="cp_page_step_step" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/cp/MasterPage.master" AutoEventWireup="true" CodeFile="device.aspx.cs" Inherits="cp_page_device_device" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-  <!-- Breadcrumbs-->
-    <ol class="breadcrumb">
+     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
-        <li class="breadcrumb-item active">STEP</li>
+        </li>
+        <li class="breadcrumb-item active">DEVICE</li>
     </ol>
-    <a class="btn btn-success" href="/cp/page/step/Add-step.aspx">Add Step</a>
+   
     <p></p>
     <table class="table table-bordered">
         <tbody >
             <tr>
                 <th class="text-center">ID</th>
-                <th class="text-center"> Step Number</th>
-                <th class="text-center">Effect</th>
-               
+                <th class="text-center">Player</th>
+                <th class="text-center">User</th>
               
-              <th colspan="2" class="text-center">Action</th>
+             <%-- <th colspan="2" class="text-center">Action</th>--%>
             </tr>
-             <%for (int i = liststep.Count - 1 ; i > -1; i-- )
+             <%for (int i = listdevice.Count - 1 ; i > -1; i-- )
                    {%>
             <tr>
-                <td><%=liststep[i].id%></td>
-                  <td><%=liststep[i].step_number%></td>
-                  <td><%=liststep[i].effect%></td>
-
-                <td class="text-center">
-                    <a class="btn btn-info" href="/cp/page/step/Edit-step.aspx?id=<%=liststep[i].id %>">
+                <td><%=listdevice[i].id%></td>
+                  <td><%=listdevice[i].player_id%></td>
+                  <td><%=listdevice[i].UserTBx.full_name%></td>
+               <%-- <td class="text-center">
+                    <a class="btn btn-info" href="/cp/page/user/Edit-user.aspx?id=<%=listplayer[i].id %>">
                         <i class="fa fa-edit" style="font-size: 15px"></i>
                     </a>
-                    <button class="btn" onclick="Delete(this,<%=liststep[i].id%>)">
+                    <button class="btn" onclick="Delete(this,<%=listplayer[i].id%>)">
                         <i class="fa fa-trash" style="font-size: 25px;color:red;"></i>
                     </button>
-                </td>
+                </td>--%>
             </tr>
             <%} %>
         </tbody>
@@ -47,7 +45,7 @@
                 $(input).prop("disabled", true);
                 //ShowLoading();
                 $.ajax({
-                    url: "/cp/do/step/delete-step.aspx",
+                    url: "/cp/do/user/delete-user.aspx",
                     method: "post",
                     data: {
                         id: id
@@ -66,7 +64,7 @@
                     },
                     error: function (error) {
                         console.log(error);
-                        swal(error);
+                        swal("Error. Please try again");
                         $(input).prop("disabled", true);
                         //HideLoading();
                     }
@@ -76,3 +74,4 @@
     </script>
 
 </asp:Content>
+

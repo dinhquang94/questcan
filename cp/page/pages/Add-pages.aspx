@@ -40,7 +40,7 @@
                 document.getElementById("txttitle").focus();
                 return 0;
             }
-         
+
             else {
                 $.ajax({
                 url: "/cp/do/page/add-page.aspx",

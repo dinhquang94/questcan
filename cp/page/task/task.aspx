@@ -36,7 +36,7 @@
                  <td><%=listtask[i].end_time%></td>
                  <td><%=listtask[i].lat%></td>
                  <td><%=listtask[i].@long%></td>
-                 <td><%=listtask[i].usertype_id%></td>
+                 <td><%=listtask[i].UserTypeTBx.name%></td>
                  <td><%=listtask[i].content%></td>
                  <td><%=listtask[i].description%></td>
                 <td class="text-center">

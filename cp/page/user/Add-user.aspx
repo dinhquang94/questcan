@@ -56,7 +56,6 @@
              <option value="<%=listtype[i].id %>"><%=listtype[i].name %></option>
 
                  <%} %>
-                 <option value="0">Employeer</option>
          </select>
     </div>
 

@@ -14,7 +14,7 @@
     </ol>
 
      
-     <div class="col-md-3 form-group">
+     <div class="col-md-6 form-group">
         <label>Store ID</label>
         <%--<input type="text" id="txtOrder" class="form-control" />--%>
          <select id="slstoreid" class="form-control">
@@ -28,7 +28,7 @@
             <%} %>
          </select>
     </div>
-    <div class="col-md-3 form-group">
+    <div class="col-md-6 form-group">
         <label>User ID</label>
         <%--<input type="text" id="txtOrder" class="form-control" />--%>
          <select id="sluserid" class="form-control">

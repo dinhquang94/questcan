@@ -20,11 +20,7 @@
      <div class="col-md-6 form-group">
         <label>Type</label>
         <%--<input type="text" id="txtOrder" class="form-control" />--%>
-         <select id="txttype" class="form-control">
-             <%for (int i = 0; i < listtype.Count; i++) {%>
-                <option value="<%=listtype[i].id %>"><%=listtype[i].name %></option>
-                 <%}%>
-         </select>
+        <input type="text" id="txttype" class="form-control" placeholder="type name" required />
     </div>
 
     <div class="form-group">
@@ -46,6 +42,15 @@
                 document.getElementById("txtcategoryname").focus();
                 return 0;
             }
+            if (type == "") {
+                alert("Please enter Category Type");
+                $(input).prop("disabled", false);
+                $(input).text("Submit");
+                document.getElementById("txttype").focus();
+                return 0;
+            }
+
+
              else {
                 $.ajax({
                     url: "/cp/do/category/add-category.aspx",

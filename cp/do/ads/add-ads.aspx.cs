@@ -21,8 +21,8 @@ public partial class cp_do_ads_add_ads : System.Web.UI.Page
             ads.title = Request["title"];
             ads.description = Request.Unvalidated["desc"];
             ads.content = Request.Unvalidated["cont"];
-            ads.store_id = null;
             ads.address = Request["address"];
+            ads.store_id = Convert.ToInt32(Request["store"]);
             AM.Add(ads);
 
             string base64 = Request["base64"];

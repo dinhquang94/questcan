@@ -48,9 +48,15 @@
     <div class="col-md-6 form-group">
         <label>Type</label>
          <select id="txttype" class="form-control">
-                 <option <% if (task.usertype_id == 1) { %>selected="selected" <% } %> value="1">Customer</option>   
+             <%for (int i = 0; i < listtype.Count; i++) {%>
+
+             <option value="<%=listtype[i].id %>" <%if (task.usertype_id == listtype[i].id){%>selected <%}%>><%=listtype[i].name %></option>
+
+                 <%} %>
+
+                 <%--<option <% if (task.usertype_id == 1) { %>selected="selected" <% } %> value="1">Customer</option>   
                  <option  <% if (task.usertype_id == 2) { %>selected="selected" <% } %> value="2">Employeer</option>
-                <option  <% if (task.usertype_id == 3) { %>selected="selected" <% } %> value="3">Admin</option>
+                <option  <% if (task.usertype_id == 3) { %>selected="selected" <% } %> value="3">Admin</option>--%>
          </select>
     </div>
      <div class="col-md-12 form-group">

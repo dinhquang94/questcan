@@ -49,6 +49,21 @@
         <input type="text" id="txtaddress" class="form-control" value="<%=ads.address %>" required />
     </div>
 
+
+              <div class="col-md-6 form-group">
+        <label>Store</label>
+        <%--<input type="text" id="txtOrder" class="form-control" />--%>
+         <select id="txtstore" class="form-control">
+             <%for (int i = 0; i < liststore.Count; i++) {%>
+
+             <option value="<%=liststore[i].id %>" <%if (liststore[i].id == ads.store_id) {%> selected <%} %>><%=liststore[i].name %></option>
+
+                 <%} %>
+         </select>
+    </div>
+
+
+
      <div class="col-md-12 form-group">
         <label>Content <span style="color:red">*</span></label>
          <textarea class="form-control tinymce" id="txtcontent" required><%=ads.content %></textarea>
@@ -87,7 +102,8 @@
             var title = $("#txttitle").val();
              var desc = tinymce.get("txtdescription").getContent();
              var cont = tinymce.get("txtcontent").getContent();
-              var address = $("#txtaddress").val();
+           var address = $("#txtaddress").val();
+           var store = $("#txtstore").val();
             if (title == "") {
                 alert("Please enter Title");
                 $(input).prop("disabled", false);
@@ -113,7 +129,8 @@
                     title: title,
                     desc: desc,
                     cont: cont,
-                    address: address
+                    address: address,
+                    store:store
                    
                 },
                 success: function (data) {

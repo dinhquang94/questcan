@@ -22,7 +22,7 @@ public partial class cp_do_ads_edit_ads : System.Web.UI.Page
             ads.title = Request["title"];
             ads.description = Request.Unvalidated["desc"];
             ads.content = Request.Unvalidated["cont"];
-            ads.store_id = null;
+            ads.store_id = Convert.ToInt32(Request["id"]);
             ads.address = Request["address"];
             string base64 = Request["base64"];
             try

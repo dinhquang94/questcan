@@ -20,10 +20,7 @@
      <div class="col-md-6 form-group">
         <label>Type</label>
         <%--<input type="text" id="txtOrder" class="form-control" />--%>
-         <select id="txttype" class="form-control">
-                 <option  <% if (cate.typecategory == 0.ToString()) { %>selected="selected" <% } %>   value="0">Employeer</option>
-                 <option  <% if (cate.typecategory == 1.ToString()) { %>selected="selected" <% } %>  value="1">Customer</option>
-         </select>
+         <input type="text" id="txttype" class="form-control" value="<%=cate.typecategory %>"/>
     </div>
 
     <div class="form-group">
@@ -47,6 +44,13 @@
                 document.getElementById("txtcategoryname").focus();
                 return 0;
             }
+          if (type == "") {
+              alert("Please enter Category Type");
+              $(input).prop("disabled", false);
+              $(input).text("Submit");
+              document.getElementById("txttype").focus();
+              return 0;
+          }
             else {
                 $.ajax({
                     url: "/cp/do/category/edit-category.aspx",

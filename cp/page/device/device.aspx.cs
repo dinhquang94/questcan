@@ -5,12 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class cp_page_task_Add_task : System.Web.UI.Page
+public partial class cp_page_device_device : System.Web.UI.Page
 {
-    public List<UserTypeTBx> listtype;
+    public List<DeviceTBx> listdevice;
     protected void Page_Load(object sender, EventArgs e)
     {
-        UsertypeManager UM = new UsertypeManager();
-        listtype = UM.GetList();
+        DeviceManager DM = new DeviceManager();
+        listdevice = DM.GetList();
     }
 }

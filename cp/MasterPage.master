@@ -176,14 +176,22 @@
             </li>  
         <li class="nav-item <%if (name.Contains("player"))
                 {%>active<%}%>">
-                <a class="nav-link" href="player">
+                <a class="nav-link" href="/cp/page/player/player.aspx">
                    <i class="fab fa-confluence"></i>
                     <span>PLAYER</span>
                  </a>
             </li> 
+
+         <li class="nav-item <%if (name.Contains("device"))
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/device/device.aspx">
+                   <i class="fab fa-confluence"></i>
+                    <span>DEVICE</span>
+                 </a>
+            </li> 
         <li class="nav-item <%if (name.Contains("step"))
                 {%>active<%}%>">
-                <a class="nav-link" href="step">
+                <a class="nav-link" href="/cp/page/step/step.aspx">
                    <i class="fab fa-confluence"></i>
                     <span>STEP</span>
                  </a>
