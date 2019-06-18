@@ -30,15 +30,15 @@
     
       <div class="col-md-6 form-group">
         <label>Latitude <span style="color:red">*</span></label>
-        <input type="text" id="txtlat" class="form-control"  readonly />
+        <input type="text" id="txtlat" class="form-control"  readonly required />
     </div>
      <div class="col-md-6 form-group">
         <label>Longitude <span style="color:red">*</span></label>
-        <input type="text" id="txtlong" class="form-control" readonly />
+        <input type="text" id="txtlong" class="form-control" readonly required />
     </div>
     <div class="col-md-6 form-group">
         <label>Phone <span style="color:red">*</span></label>
-        <input type="text" id="txtphone" class="form-control" placeholder="0999887722"  required />
+        <input type="text" id="txtphone" class="form-control" placeholder="0999887722" onkeypress="return isNumber(event)"  required />
     </div>
     <div class="col-md-6 form-group">
         <label>Email <span style="color:red">*</span></label>
@@ -46,11 +46,19 @@
     </div>
 
     <div class="form-group">
-        <a class="btn btn-danger" href="/cp/page/page/page.aspx">Cancel</a>
+        <a class="btn btn-danger" href="/cp/page/store/store.aspx">Cancel</a>
         <button class="btn btn-info" id="i_submit" onclick="Submit(this)">Submit</button>
     </div>
         </form>
      <script>
+         function isNumber(evt) {
+             evt = (evt) ? evt : window.event;
+             var charCode = (evt.which) ? evt.which : evt.keyCode;
+             if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                 return false;
+             }
+             return true;
+         }
          var x = document.getElementById("txtlat");
          var y = document.getElementById("txtlong");
 
@@ -121,7 +129,15 @@
                  $(input).text("Submit");
                  document.getElementById("txtemail").focus();
                  return 0;
+              }
+             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) == false) {
+                 alert("Please enter format Email: example@example.com");
+                 $(input).prop("disabled", false);
+                 $(input).text("Submit");
+                 document.getElementById("txtemail").focus();
+                 return 0;
              }
+
             else {
                 $.ajax({
                 url: "/cp/do/store/add-store.aspx",

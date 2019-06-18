@@ -13,36 +13,36 @@
     </ol>
   <div class="col-md-6 form-group">
         <label>Name <span style="color:red">*</span></label>
-        <input type="text" id="txtname" class="form-control" value="<%=store.name %>"  />
+        <input type="text" id="txtname" class="form-control" value="<%=store.name %>" required />
     </div>
      <div class="col-md-6 form-group">
         <label>Address <span style="color:red">*</span></label>
-        <input type="text" id="txtaddress" class="form-control" value="<%=store.address %>"  />
+        <input type="text" id="txtaddress" class="form-control" value="<%=store.address %>"  required/>
     </div>
     <div class="col-md-6 form-group">
         <label>Open Time <span style="color:red">*</span></label>
-        <input type="time" id="txtopen" class="form-control" value="<%=store.open_time %>"  />
+        <input type="time" id="txtopen" class="form-control" value="<%=store.open_time %>" required />
     </div>
     <div class="col-md-6 form-group">
         <label>Close Time <span style="color:red">*</span></label>
-        <input type="time" id="txtclose" class="form-control" value="<%=store.close_time %>"  />
+        <input type="time" id="txtclose" class="form-control" value="<%=store.close_time %>" required />
     </div>
     
       <div class="col-md-6 form-group">
         <label>Latitude <span style="color:red">*</span></label>
-        <input type="text" id="txtlat" class="form-control" value="<%=store.lat %>"  readonly />
+        <input type="text" id="txtlat" class="form-control" value="<%=store.lat %>"  readonly required/>
     </div>
      <div class="col-md-6 form-group">
         <label>Longitude <span style="color:red">*</span></label>
-        <input type="text" id="txtlong" class="form-control" value="<%=store.@long %>" readonly />
+        <input type="text" id="txtlong" class="form-control" value="<%=store.@long %>" readonly required />
     </div>
     <div class="col-md-6 form-group">
         <label>Phone <span style="color:red">*</span></label>
-        <input type="text" id="txtphone" class="form-control" value="<%=store.phone %>"  />
+        <input type="text" id="txtphone" class="form-control" value="<%=store.phone %>" onkeypress="return isNumber(event)" required />
     </div>
     <div class="col-md-6 form-group">
         <label>Email <span style="color:red">*</span></label>
-        <input type="text" id="txtemail" class="form-control"value="<%=store.email %>"  />
+        <input type="text" id="txtemail" class="form-control"value="<%=store.email %>" required />
     </div>
 
     <div class="form-group">
@@ -52,6 +52,14 @@
         </form>
 
     <script>
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
          // var x = document.getElementById("txtlat");
          //var y = document.getElementById("txtlong");
 
@@ -122,7 +130,14 @@
                  $(input).text("Submit");
                  document.getElementById("txtemail").focus();
                  return 0;
-             }
+              }
+          if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) == false) {
+              alert("Please enter format Email: example@example.com");
+              $(input).prop("disabled", false);
+              $(input).text("Submit");
+              document.getElementById("txtemail").focus();
+              return 0;
+          }
             else {
                 $.ajax({
                     url: "/cp/do/store/edit-store.aspx",

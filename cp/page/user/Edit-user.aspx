@@ -40,7 +40,7 @@
 
     <div class="col-md-6 form-group">
         <label>Phone <span style="color:red">*</span></label>
-        <input type="text" id="txtphone" class="form-control"  value="<%=user.phone %>" />
+        <input type="text" id="txtphone" class="form-control"  value="<%=user.phone %>" onkeypress="return isNumber(event)" />
     </div>
 
     <div class="col-md-6 form-group">
@@ -69,7 +69,7 @@
 
     <div class="col-md-6 form-group">
         <label>Credit <span style="color:red">*</span></label>
-        <input id="txtcredit" class="form-control"  value="<%=user.credit %>"/>
+        <input id="txtcredit" class="form-control"  value="<%=user.credit %>" onkeypress="return isNumber(event)"/>
     </div>
     
     <div class="form-group">
@@ -78,7 +78,14 @@
     </div>
         </form>
     <script>
-
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
         function Submit(input,id) {
             $(input).prop("disabled", true);
             $(input).text("Submitting");
@@ -122,7 +129,14 @@
                 $(input).text("Submit");
                 document.getElementById("txtemail").focus();
                 return 0;
-             }
+            }
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) == false) {
+                alert("Please enter format email: example@example.com");
+                $(input).prop("disabled", false);
+                $(input).text("Submit");
+                document.getElementById("txtemail").focus();
+                return 0;
+            }
               if (password == "") {
                 alert("Please enter Password");
                 $(input).prop("disabled", false);

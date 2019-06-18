@@ -26,7 +26,7 @@
     </div>--%>
      <div class="col-md-6 form-group">
         <label>Point <span style="color:red">*</span></label>
-        <input type="text" id="txtpoint" class="form-control" value="<%=task.point %>" required />
+        <input type="text" id="txtpoint" class="form-control" value="<%=task.point %>" onkeypress="return isNumber(event)" required />
     </div>
     <div class="col-md-6 form-group">
         <label>Start Time <span style="color:red">*</span></label>
@@ -77,6 +77,16 @@
 
 
     <script>
+
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
       function Submit(input,id) {
             $(input).prop("disabled", true);
             $(input).text("Submitting");
