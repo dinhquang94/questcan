@@ -111,6 +111,15 @@
                     <span>CATEGORY</span>
                 </a>
             </li>
+         <li class="nav-item <%if (name=="statistics")
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/statistics/statistics.aspx">
+                   <i class="fas fa-book"></i>
+                    <span>STATISTICS</span>
+                </a>
+            </li>
+
+
             <li class="nav-item <%if (name=="pages"||name=="add-pages"||name=="edit-pages")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/pages/pages.aspx">

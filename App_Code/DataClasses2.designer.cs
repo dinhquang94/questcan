@@ -38,6 +38,12 @@ public partial class DataClasses2DataContext : System.Data.Linq.DataContext
   partial void InsertStepTBx(StepTBx instance);
   partial void UpdateStepTBx(StepTBx instance);
   partial void DeleteStepTBx(StepTBx instance);
+  partial void InsertClickHistory(ClickHistory instance);
+  partial void UpdateClickHistory(ClickHistory instance);
+  partial void DeleteClickHistory(ClickHistory instance);
+  partial void InsertStatisticsTBx(StatisticsTBx instance);
+  partial void UpdateStatisticsTBx(StatisticsTBx instance);
+  partial void DeleteStatisticsTBx(StatisticsTBx instance);
   #endregion
 	
 	public DataClasses2DataContext() : 
@@ -91,6 +97,22 @@ public partial class DataClasses2DataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<StepTBx>();
+		}
+	}
+	
+	public System.Data.Linq.Table<ClickHistory> ClickHistories
+	{
+		get
+		{
+			return this.GetTable<ClickHistory>();
+		}
+	}
+	
+	public System.Data.Linq.Table<StatisticsTBx> StatisticsTBxes
+	{
+		get
+		{
+			return this.GetTable<StatisticsTBx>();
 		}
 	}
 }
@@ -568,6 +590,298 @@ public partial class StepTBx : INotifyPropertyChanging, INotifyPropertyChanged
 				this._effect = value;
 				this.SendPropertyChanged("effect");
 				this.OneffectChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="trungle8_questcan.ClickHistory")]
+public partial class ClickHistory : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _id;
+	
+	private System.Nullable<int> _user_id;
+	
+	private System.Nullable<int> _point;
+	
+	private System.Nullable<System.DateTime> _click_date;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onuser_idChanging(System.Nullable<int> value);
+    partial void Onuser_idChanged();
+    partial void OnpointChanging(System.Nullable<int> value);
+    partial void OnpointChanged();
+    partial void Onclick_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onclick_dateChanged();
+    #endregion
+	
+	public ClickHistory()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int id
+	{
+		get
+		{
+			return this._id;
+		}
+		set
+		{
+			if ((this._id != value))
+			{
+				this.OnidChanging(value);
+				this.SendPropertyChanging();
+				this._id = value;
+				this.SendPropertyChanged("id");
+				this.OnidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_id", DbType="Int")]
+	public System.Nullable<int> user_id
+	{
+		get
+		{
+			return this._user_id;
+		}
+		set
+		{
+			if ((this._user_id != value))
+			{
+				this.Onuser_idChanging(value);
+				this.SendPropertyChanging();
+				this._user_id = value;
+				this.SendPropertyChanged("user_id");
+				this.Onuser_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_point", DbType="Int")]
+	public System.Nullable<int> point
+	{
+		get
+		{
+			return this._point;
+		}
+		set
+		{
+			if ((this._point != value))
+			{
+				this.OnpointChanging(value);
+				this.SendPropertyChanging();
+				this._point = value;
+				this.SendPropertyChanged("point");
+				this.OnpointChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_click_date", DbType="DateTime")]
+	public System.Nullable<System.DateTime> click_date
+	{
+		get
+		{
+			return this._click_date;
+		}
+		set
+		{
+			if ((this._click_date != value))
+			{
+				this.Onclick_dateChanging(value);
+				this.SendPropertyChanging();
+				this._click_date = value;
+				this.SendPropertyChanged("click_date");
+				this.Onclick_dateChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="trungle8_trungle8.StatisticsTBx")]
+public partial class StatisticsTBx : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _id;
+	
+	private System.Nullable<int> _user_id;
+	
+	private System.Nullable<int> _totle;
+	
+	private System.Nullable<System.DateTime> _date;
+	
+	private System.Nullable<int> _status;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onuser_idChanging(System.Nullable<int> value);
+    partial void Onuser_idChanged();
+    partial void OntotleChanging(System.Nullable<int> value);
+    partial void OntotleChanged();
+    partial void OndateChanging(System.Nullable<System.DateTime> value);
+    partial void OndateChanged();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    #endregion
+	
+	public StatisticsTBx()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int id
+	{
+		get
+		{
+			return this._id;
+		}
+		set
+		{
+			if ((this._id != value))
+			{
+				this.OnidChanging(value);
+				this.SendPropertyChanging();
+				this._id = value;
+				this.SendPropertyChanged("id");
+				this.OnidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_id", DbType="Int")]
+	public System.Nullable<int> user_id
+	{
+		get
+		{
+			return this._user_id;
+		}
+		set
+		{
+			if ((this._user_id != value))
+			{
+				this.Onuser_idChanging(value);
+				this.SendPropertyChanging();
+				this._user_id = value;
+				this.SendPropertyChanged("user_id");
+				this.Onuser_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totle", DbType="Int")]
+	public System.Nullable<int> totle
+	{
+		get
+		{
+			return this._totle;
+		}
+		set
+		{
+			if ((this._totle != value))
+			{
+				this.OntotleChanging(value);
+				this.SendPropertyChanging();
+				this._totle = value;
+				this.SendPropertyChanged("totle");
+				this.OntotleChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
+	public System.Nullable<System.DateTime> date
+	{
+		get
+		{
+			return this._date;
+		}
+		set
+		{
+			if ((this._date != value))
+			{
+				this.OndateChanging(value);
+				this.SendPropertyChanging();
+				this._date = value;
+				this.SendPropertyChanged("date");
+				this.OndateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int")]
+	public System.Nullable<int> status
+	{
+		get
+		{
+			return this._status;
+		}
+		set
+		{
+			if ((this._status != value))
+			{
+				this.OnstatusChanging(value);
+				this.SendPropertyChanging();
+				this._status = value;
+				this.SendPropertyChanged("status");
+				this.OnstatusChanged();
 			}
 		}
 	}
