@@ -11,6 +11,7 @@
     </ol>
     <a class="btn btn-success" href="/cp/page/ads/Add-ads.aspx">Add Advertise</a>
     <p></p>
+     <div style="overflow-x:auto;">
     <table class="table table-bordered">
         <tbody >
             <tr>
@@ -49,7 +50,7 @@
             <%} %>
         </tbody>
     </table>
-
+         </div>
      <script>
         function Delete(input, id) {
             alertify.confirm('Are you sure Delete', function () {

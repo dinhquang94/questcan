@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <form>
+     <form >
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
@@ -29,7 +29,7 @@
 
     <div class="col-md-6 form-group">
         <label>Email <span style="color:red">*</span></label>
-        <input type="text" id="txtemail" class="form-control" placeholder="abc@example" required />
+        <input type="text" id="txtemail" class="form-control" placeholder="abc@example.com" required />
     </div>
 
     <div class="col-md-6 form-group">
@@ -71,7 +71,7 @@
     
     <div class="form-group">
         <a class="btn btn-danger" href="/cp/page/user/user.aspx">Cancel</a>
-        <button class="btn btn-info" id="i_submit" onclick="Submit(this)">Submit</button>
+        <button type="button" class="btn btn-info" id="i_submit" onclick="Submit(this)">Submit</button>
     </div>
         </form>
 
@@ -124,7 +124,7 @@
                 alert("Please enter Email");
                 $(input).prop("disabled", false);
                 $(input).text("Submit");
-                document.getElementById("txtemail").focus();
+                 document.getElementById("txtemail").focus();
                 return 0;
             }
 

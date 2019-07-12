@@ -12,7 +12,7 @@
     <p></p>
     <div class="row">
         <div class="col-xs-12">
-            <h2>SaiGon Heat</h2>
+            <h2>QUESTCAN</h2>
 
             <!---- Partner Login Block --->
             <div class="row">
@@ -32,7 +32,7 @@
                                 <input class="form-control" placeholder="Password" id="txtPassword" type="password" />
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-success btn-lg btn-block" id="btnLogin">Sign in</button>
+                                <button type="button" class="btn btn-success btn-lg btn-block" id="btnLogin">Sign in</button>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="delete-rule.aspx.cs" Inherits="cp_do_rule_delete_rule" %>

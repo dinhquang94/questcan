@@ -53,9 +53,6 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertStoreTBx(StoreTBx instance);
   partial void UpdateStoreTBx(StoreTBx instance);
   partial void DeleteStoreTBx(StoreTBx instance);
-  partial void InsertTaskTBx(TaskTBx instance);
-  partial void UpdateTaskTBx(TaskTBx instance);
-  partial void DeleteTaskTBx(TaskTBx instance);
   partial void InsertUserTaskTBx(UserTaskTBx instance);
   partial void UpdateUserTaskTBx(UserTaskTBx instance);
   partial void DeleteUserTaskTBx(UserTaskTBx instance);
@@ -68,6 +65,15 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertGameTBx(GameTBx instance);
   partial void UpdateGameTBx(GameTBx instance);
   partial void DeleteGameTBx(GameTBx instance);
+  partial void InsertRuleTBx(RuleTBx instance);
+  partial void UpdateRuleTBx(RuleTBx instance);
+  partial void DeleteRuleTBx(RuleTBx instance);
+  partial void InsertTaskTBx(TaskTBx instance);
+  partial void UpdateTaskTBx(TaskTBx instance);
+  partial void DeleteTaskTBx(TaskTBx instance);
+  partial void InsertQuotationsTBx(QuotationsTBx instance);
+  partial void UpdateQuotationsTBx(QuotationsTBx instance);
+  partial void DeleteQuotationsTBx(QuotationsTBx instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -164,14 +170,6 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<TaskTBx> TaskTBxes
-	{
-		get
-		{
-			return this.GetTable<TaskTBx>();
-		}
-	}
-	
 	public System.Data.Linq.Table<UserTaskTBx> UserTaskTBxes
 	{
 		get
@@ -201,6 +199,30 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<GameTBx>();
+		}
+	}
+	
+	public System.Data.Linq.Table<RuleTBx> RuleTBxes
+	{
+		get
+		{
+			return this.GetTable<RuleTBx>();
+		}
+	}
+	
+	public System.Data.Linq.Table<TaskTBx> TaskTBxes
+	{
+		get
+		{
+			return this.GetTable<TaskTBx>();
+		}
+	}
+	
+	public System.Data.Linq.Table<QuotationsTBx> QuotationsTBxes
+	{
+		get
+		{
+			return this.GetTable<QuotationsTBx>();
 		}
 	}
 }
@@ -2264,377 +2286,6 @@ public partial class StoreTBx : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TaskTBx")]
-public partial class TaskTBx : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _id;
-	
-	private System.Nullable<int> _status;
-	
-	private string _title;
-	
-	private string _description;
-	
-	private int _point;
-	
-	private string _start_time;
-	
-	private string _end_time;
-	
-	private System.Nullable<int> _usertype_id;
-	
-	private string _content;
-	
-	private string _lat;
-	
-	private string _long;
-	
-	private EntitySet<UserTaskTBx> _UserTaskTBxes;
-	
-	private EntityRef<UserTypeTBx> _UserTypeTBx;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnstatusChanging(System.Nullable<int> value);
-    partial void OnstatusChanged();
-    partial void OntitleChanging(string value);
-    partial void OntitleChanged();
-    partial void OndescriptionChanging(string value);
-    partial void OndescriptionChanged();
-    partial void OnpointChanging(int value);
-    partial void OnpointChanged();
-    partial void Onstart_timeChanging(string value);
-    partial void Onstart_timeChanged();
-    partial void Onend_timeChanging(string value);
-    partial void Onend_timeChanged();
-    partial void Onusertype_idChanging(System.Nullable<int> value);
-    partial void Onusertype_idChanged();
-    partial void OncontentChanging(string value);
-    partial void OncontentChanged();
-    partial void OnlatChanging(string value);
-    partial void OnlatChanged();
-    partial void OnlongChanging(string value);
-    partial void OnlongChanged();
-    #endregion
-	
-	public TaskTBx()
-	{
-		this._UserTaskTBxes = new EntitySet<UserTaskTBx>(new Action<UserTaskTBx>(this.attach_UserTaskTBxes), new Action<UserTaskTBx>(this.detach_UserTaskTBxes));
-		this._UserTypeTBx = default(EntityRef<UserTypeTBx>);
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int id
-	{
-		get
-		{
-			return this._id;
-		}
-		set
-		{
-			if ((this._id != value))
-			{
-				this.OnidChanging(value);
-				this.SendPropertyChanging();
-				this._id = value;
-				this.SendPropertyChanged("id");
-				this.OnidChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int")]
-	public System.Nullable<int> status
-	{
-		get
-		{
-			return this._status;
-		}
-		set
-		{
-			if ((this._status != value))
-			{
-				this.OnstatusChanging(value);
-				this.SendPropertyChanging();
-				this._status = value;
-				this.SendPropertyChanged("status");
-				this.OnstatusChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(200)")]
-	public string title
-	{
-		get
-		{
-			return this._title;
-		}
-		set
-		{
-			if ((this._title != value))
-			{
-				this.OntitleChanging(value);
-				this.SendPropertyChanging();
-				this._title = value;
-				this.SendPropertyChanged("title");
-				this.OntitleChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(MAX)")]
-	public string description
-	{
-		get
-		{
-			return this._description;
-		}
-		set
-		{
-			if ((this._description != value))
-			{
-				this.OndescriptionChanging(value);
-				this.SendPropertyChanging();
-				this._description = value;
-				this.SendPropertyChanged("description");
-				this.OndescriptionChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_point", DbType="Int NOT NULL")]
-	public int point
-	{
-		get
-		{
-			return this._point;
-		}
-		set
-		{
-			if ((this._point != value))
-			{
-				this.OnpointChanging(value);
-				this.SendPropertyChanging();
-				this._point = value;
-				this.SendPropertyChanged("point");
-				this.OnpointChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_start_time", DbType="NVarChar(50)")]
-	public string start_time
-	{
-		get
-		{
-			return this._start_time;
-		}
-		set
-		{
-			if ((this._start_time != value))
-			{
-				this.Onstart_timeChanging(value);
-				this.SendPropertyChanging();
-				this._start_time = value;
-				this.SendPropertyChanged("start_time");
-				this.Onstart_timeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_end_time", DbType="NVarChar(50)")]
-	public string end_time
-	{
-		get
-		{
-			return this._end_time;
-		}
-		set
-		{
-			if ((this._end_time != value))
-			{
-				this.Onend_timeChanging(value);
-				this.SendPropertyChanging();
-				this._end_time = value;
-				this.SendPropertyChanged("end_time");
-				this.Onend_timeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usertype_id", DbType="Int")]
-	public System.Nullable<int> usertype_id
-	{
-		get
-		{
-			return this._usertype_id;
-		}
-		set
-		{
-			if ((this._usertype_id != value))
-			{
-				if (this._UserTypeTBx.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
-				this.Onusertype_idChanging(value);
-				this.SendPropertyChanging();
-				this._usertype_id = value;
-				this.SendPropertyChanged("usertype_id");
-				this.Onusertype_idChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_content", DbType="NVarChar(MAX)")]
-	public string content
-	{
-		get
-		{
-			return this._content;
-		}
-		set
-		{
-			if ((this._content != value))
-			{
-				this.OncontentChanging(value);
-				this.SendPropertyChanging();
-				this._content = value;
-				this.SendPropertyChanged("content");
-				this.OncontentChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lat", DbType="NVarChar(200)")]
-	public string lat
-	{
-		get
-		{
-			return this._lat;
-		}
-		set
-		{
-			if ((this._lat != value))
-			{
-				this.OnlatChanging(value);
-				this.SendPropertyChanging();
-				this._lat = value;
-				this.SendPropertyChanged("lat");
-				this.OnlatChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="long", Storage="_long", DbType="NVarChar(2000)")]
-	public string @long
-	{
-		get
-		{
-			return this._long;
-		}
-		set
-		{
-			if ((this._long != value))
-			{
-				this.OnlongChanging(value);
-				this.SendPropertyChanging();
-				this._long = value;
-				this.SendPropertyChanged("@long");
-				this.OnlongChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaskTBx_UserTaskTBx", Storage="_UserTaskTBxes", ThisKey="id", OtherKey="task_id")]
-	public EntitySet<UserTaskTBx> UserTaskTBxes
-	{
-		get
-		{
-			return this._UserTaskTBxes;
-		}
-		set
-		{
-			this._UserTaskTBxes.Assign(value);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserTypeTBx_TaskTBx", Storage="_UserTypeTBx", ThisKey="usertype_id", OtherKey="id", IsForeignKey=true)]
-	public UserTypeTBx UserTypeTBx
-	{
-		get
-		{
-			return this._UserTypeTBx.Entity;
-		}
-		set
-		{
-			UserTypeTBx previousValue = this._UserTypeTBx.Entity;
-			if (((previousValue != value) 
-						|| (this._UserTypeTBx.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._UserTypeTBx.Entity = null;
-					previousValue.TaskTBxes.Remove(this);
-				}
-				this._UserTypeTBx.Entity = value;
-				if ((value != null))
-				{
-					value.TaskTBxes.Add(this);
-					this._usertype_id = value.id;
-				}
-				else
-				{
-					this._usertype_id = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("UserTypeTBx");
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-	
-	private void attach_UserTaskTBxes(UserTaskTBx entity)
-	{
-		this.SendPropertyChanging();
-		entity.TaskTBx = this;
-	}
-	
-	private void detach_UserTaskTBxes(UserTaskTBx entity)
-	{
-		this.SendPropertyChanging();
-		entity.TaskTBx = null;
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserTaskTBx")]
 public partial class UserTaskTBx : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -2649,9 +2300,9 @@ public partial class UserTaskTBx : INotifyPropertyChanging, INotifyPropertyChang
 	
 	private System.Nullable<int> _user_id;
 	
-	private EntityRef<TaskTBx> _TaskTBx;
-	
 	private EntityRef<UserTBx> _UserTBx;
+	
+	private EntityRef<TaskTBx> _TaskTBx;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2669,8 +2320,8 @@ public partial class UserTaskTBx : INotifyPropertyChanging, INotifyPropertyChang
 	
 	public UserTaskTBx()
 	{
-		this._TaskTBx = default(EntityRef<TaskTBx>);
 		this._UserTBx = default(EntityRef<UserTBx>);
+		this._TaskTBx = default(EntityRef<TaskTBx>);
 		OnCreated();
 	}
 	
@@ -2762,40 +2413,6 @@ public partial class UserTaskTBx : INotifyPropertyChanging, INotifyPropertyChang
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaskTBx_UserTaskTBx", Storage="_TaskTBx", ThisKey="task_id", OtherKey="id", IsForeignKey=true)]
-	public TaskTBx TaskTBx
-	{
-		get
-		{
-			return this._TaskTBx.Entity;
-		}
-		set
-		{
-			TaskTBx previousValue = this._TaskTBx.Entity;
-			if (((previousValue != value) 
-						|| (this._TaskTBx.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._TaskTBx.Entity = null;
-					previousValue.UserTaskTBxes.Remove(this);
-				}
-				this._TaskTBx.Entity = value;
-				if ((value != null))
-				{
-					value.UserTaskTBxes.Add(this);
-					this._task_id = value.id;
-				}
-				else
-				{
-					this._task_id = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("TaskTBx");
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserTBx_UserTaskTBx", Storage="_UserTBx", ThisKey="user_id", OtherKey="id", IsForeignKey=true)]
 	public UserTBx UserTBx
 	{
@@ -2826,6 +2443,40 @@ public partial class UserTaskTBx : INotifyPropertyChanging, INotifyPropertyChang
 					this._user_id = default(Nullable<int>);
 				}
 				this.SendPropertyChanged("UserTBx");
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaskTBx_UserTaskTBx", Storage="_TaskTBx", ThisKey="task_id", OtherKey="id", IsForeignKey=true)]
+	public TaskTBx TaskTBx
+	{
+		get
+		{
+			return this._TaskTBx.Entity;
+		}
+		set
+		{
+			TaskTBx previousValue = this._TaskTBx.Entity;
+			if (((previousValue != value) 
+						|| (this._TaskTBx.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._TaskTBx.Entity = null;
+					previousValue.UserTaskTBxes.Remove(this);
+				}
+				this._TaskTBx.Entity = value;
+				if ((value != null))
+				{
+					value.UserTaskTBxes.Add(this);
+					this._task_id = value.id;
+				}
+				else
+				{
+					this._task_id = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("TaskTBx");
 			}
 		}
 	}
@@ -3772,6 +3423,954 @@ public partial class GameTBx : INotifyPropertyChanging, INotifyPropertyChanged
 				this._banner = value;
 				this.SendPropertyChanged("banner");
 				this.OnbannerChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int")]
+	public System.Nullable<int> status
+	{
+		get
+		{
+			return this._status;
+		}
+		set
+		{
+			if ((this._status != value))
+			{
+				this.OnstatusChanging(value);
+				this.SendPropertyChanging();
+				this._status = value;
+				this.SendPropertyChanged("status");
+				this.OnstatusChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="trungle8_trungle8.RuleTBx")]
+public partial class RuleTBx : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _id;
+	
+	private string _name;
+	
+	private string _point;
+	
+	private string _content;
+	
+	private string _description;
+	
+	private System.Nullable<int> _status;
+	
+	private System.Nullable<int> _task_id;
+	
+	private string _step;
+	
+	private EntityRef<TaskTBx> _TaskTBx;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnpointChanging(string value);
+    partial void OnpointChanged();
+    partial void OncontentChanging(string value);
+    partial void OncontentChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    partial void Ontask_idChanging(System.Nullable<int> value);
+    partial void Ontask_idChanged();
+    partial void OnstepChanging(string value);
+    partial void OnstepChanged();
+    #endregion
+	
+	public RuleTBx()
+	{
+		this._TaskTBx = default(EntityRef<TaskTBx>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int id
+	{
+		get
+		{
+			return this._id;
+		}
+		set
+		{
+			if ((this._id != value))
+			{
+				this.OnidChanging(value);
+				this.SendPropertyChanging();
+				this._id = value;
+				this.SendPropertyChanged("id");
+				this.OnidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(500)")]
+	public string name
+	{
+		get
+		{
+			return this._name;
+		}
+		set
+		{
+			if ((this._name != value))
+			{
+				this.OnnameChanging(value);
+				this.SendPropertyChanging();
+				this._name = value;
+				this.SendPropertyChanged("name");
+				this.OnnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_point", DbType="NVarChar(150)")]
+	public string point
+	{
+		get
+		{
+			return this._point;
+		}
+		set
+		{
+			if ((this._point != value))
+			{
+				this.OnpointChanging(value);
+				this.SendPropertyChanging();
+				this._point = value;
+				this.SendPropertyChanged("point");
+				this.OnpointChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_content", DbType="NVarChar(MAX)")]
+	public string content
+	{
+		get
+		{
+			return this._content;
+		}
+		set
+		{
+			if ((this._content != value))
+			{
+				this.OncontentChanging(value);
+				this.SendPropertyChanging();
+				this._content = value;
+				this.SendPropertyChanged("content");
+				this.OncontentChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(MAX)")]
+	public string description
+	{
+		get
+		{
+			return this._description;
+		}
+		set
+		{
+			if ((this._description != value))
+			{
+				this.OndescriptionChanging(value);
+				this.SendPropertyChanging();
+				this._description = value;
+				this.SendPropertyChanged("description");
+				this.OndescriptionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int")]
+	public System.Nullable<int> status
+	{
+		get
+		{
+			return this._status;
+		}
+		set
+		{
+			if ((this._status != value))
+			{
+				this.OnstatusChanging(value);
+				this.SendPropertyChanging();
+				this._status = value;
+				this.SendPropertyChanged("status");
+				this.OnstatusChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_task_id", DbType="Int")]
+	public System.Nullable<int> task_id
+	{
+		get
+		{
+			return this._task_id;
+		}
+		set
+		{
+			if ((this._task_id != value))
+			{
+				if (this._TaskTBx.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.Ontask_idChanging(value);
+				this.SendPropertyChanging();
+				this._task_id = value;
+				this.SendPropertyChanged("task_id");
+				this.Ontask_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_step", DbType="NVarChar(250)")]
+	public string step
+	{
+		get
+		{
+			return this._step;
+		}
+		set
+		{
+			if ((this._step != value))
+			{
+				this.OnstepChanging(value);
+				this.SendPropertyChanging();
+				this._step = value;
+				this.SendPropertyChanged("step");
+				this.OnstepChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaskTBx_RuleTBx", Storage="_TaskTBx", ThisKey="task_id", OtherKey="id", IsForeignKey=true)]
+	public TaskTBx TaskTBx
+	{
+		get
+		{
+			return this._TaskTBx.Entity;
+		}
+		set
+		{
+			TaskTBx previousValue = this._TaskTBx.Entity;
+			if (((previousValue != value) 
+						|| (this._TaskTBx.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._TaskTBx.Entity = null;
+					previousValue.RuleTBxes.Remove(this);
+				}
+				this._TaskTBx.Entity = value;
+				if ((value != null))
+				{
+					value.RuleTBxes.Add(this);
+					this._task_id = value.id;
+				}
+				else
+				{
+					this._task_id = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("TaskTBx");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TaskTBx")]
+public partial class TaskTBx : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _id;
+	
+	private System.Nullable<int> _status;
+	
+	private string _title;
+	
+	private string _description;
+	
+	private int _point;
+	
+	private string _start_time;
+	
+	private string _end_time;
+	
+	private System.Nullable<int> _usertype_id;
+	
+	private string _content;
+	
+	private string _lat;
+	
+	private string _long;
+	
+	private string _picture;
+	
+	private string _step1;
+	
+	private string _step2;
+	
+	private string _rule1;
+	
+	private string _rule2;
+	
+	private string _link;
+	
+	private EntitySet<UserTaskTBx> _UserTaskTBxes;
+	
+	private EntitySet<RuleTBx> _RuleTBxes;
+	
+	private EntityRef<UserTypeTBx> _UserTypeTBx;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    partial void OntitleChanging(string value);
+    partial void OntitleChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnpointChanging(int value);
+    partial void OnpointChanged();
+    partial void Onstart_timeChanging(string value);
+    partial void Onstart_timeChanged();
+    partial void Onend_timeChanging(string value);
+    partial void Onend_timeChanged();
+    partial void Onusertype_idChanging(System.Nullable<int> value);
+    partial void Onusertype_idChanged();
+    partial void OncontentChanging(string value);
+    partial void OncontentChanged();
+    partial void OnlatChanging(string value);
+    partial void OnlatChanged();
+    partial void OnlongChanging(string value);
+    partial void OnlongChanged();
+    partial void OnpictureChanging(string value);
+    partial void OnpictureChanged();
+    partial void Onstep1Changing(string value);
+    partial void Onstep1Changed();
+    partial void Onstep2Changing(string value);
+    partial void Onstep2Changed();
+    partial void Onrule1Changing(string value);
+    partial void Onrule1Changed();
+    partial void Onrule2Changing(string value);
+    partial void Onrule2Changed();
+    partial void OnlinkChanging(string value);
+    partial void OnlinkChanged();
+    #endregion
+	
+	public TaskTBx()
+	{
+		this._UserTaskTBxes = new EntitySet<UserTaskTBx>(new Action<UserTaskTBx>(this.attach_UserTaskTBxes), new Action<UserTaskTBx>(this.detach_UserTaskTBxes));
+		this._RuleTBxes = new EntitySet<RuleTBx>(new Action<RuleTBx>(this.attach_RuleTBxes), new Action<RuleTBx>(this.detach_RuleTBxes));
+		this._UserTypeTBx = default(EntityRef<UserTypeTBx>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int id
+	{
+		get
+		{
+			return this._id;
+		}
+		set
+		{
+			if ((this._id != value))
+			{
+				this.OnidChanging(value);
+				this.SendPropertyChanging();
+				this._id = value;
+				this.SendPropertyChanged("id");
+				this.OnidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int")]
+	public System.Nullable<int> status
+	{
+		get
+		{
+			return this._status;
+		}
+		set
+		{
+			if ((this._status != value))
+			{
+				this.OnstatusChanging(value);
+				this.SendPropertyChanging();
+				this._status = value;
+				this.SendPropertyChanged("status");
+				this.OnstatusChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(200)")]
+	public string title
+	{
+		get
+		{
+			return this._title;
+		}
+		set
+		{
+			if ((this._title != value))
+			{
+				this.OntitleChanging(value);
+				this.SendPropertyChanging();
+				this._title = value;
+				this.SendPropertyChanged("title");
+				this.OntitleChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(MAX)")]
+	public string description
+	{
+		get
+		{
+			return this._description;
+		}
+		set
+		{
+			if ((this._description != value))
+			{
+				this.OndescriptionChanging(value);
+				this.SendPropertyChanging();
+				this._description = value;
+				this.SendPropertyChanged("description");
+				this.OndescriptionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_point", DbType="Int NOT NULL")]
+	public int point
+	{
+		get
+		{
+			return this._point;
+		}
+		set
+		{
+			if ((this._point != value))
+			{
+				this.OnpointChanging(value);
+				this.SendPropertyChanging();
+				this._point = value;
+				this.SendPropertyChanged("point");
+				this.OnpointChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_start_time", DbType="NVarChar(50)")]
+	public string start_time
+	{
+		get
+		{
+			return this._start_time;
+		}
+		set
+		{
+			if ((this._start_time != value))
+			{
+				this.Onstart_timeChanging(value);
+				this.SendPropertyChanging();
+				this._start_time = value;
+				this.SendPropertyChanged("start_time");
+				this.Onstart_timeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_end_time", DbType="NVarChar(50)")]
+	public string end_time
+	{
+		get
+		{
+			return this._end_time;
+		}
+		set
+		{
+			if ((this._end_time != value))
+			{
+				this.Onend_timeChanging(value);
+				this.SendPropertyChanging();
+				this._end_time = value;
+				this.SendPropertyChanged("end_time");
+				this.Onend_timeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usertype_id", DbType="Int")]
+	public System.Nullable<int> usertype_id
+	{
+		get
+		{
+			return this._usertype_id;
+		}
+		set
+		{
+			if ((this._usertype_id != value))
+			{
+				if (this._UserTypeTBx.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.Onusertype_idChanging(value);
+				this.SendPropertyChanging();
+				this._usertype_id = value;
+				this.SendPropertyChanged("usertype_id");
+				this.Onusertype_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_content", DbType="NVarChar(MAX)")]
+	public string content
+	{
+		get
+		{
+			return this._content;
+		}
+		set
+		{
+			if ((this._content != value))
+			{
+				this.OncontentChanging(value);
+				this.SendPropertyChanging();
+				this._content = value;
+				this.SendPropertyChanged("content");
+				this.OncontentChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lat", DbType="NVarChar(200)")]
+	public string lat
+	{
+		get
+		{
+			return this._lat;
+		}
+		set
+		{
+			if ((this._lat != value))
+			{
+				this.OnlatChanging(value);
+				this.SendPropertyChanging();
+				this._lat = value;
+				this.SendPropertyChanged("lat");
+				this.OnlatChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="long", Storage="_long", DbType="NVarChar(200)")]
+	public string @long
+	{
+		get
+		{
+			return this._long;
+		}
+		set
+		{
+			if ((this._long != value))
+			{
+				this.OnlongChanging(value);
+				this.SendPropertyChanging();
+				this._long = value;
+				this.SendPropertyChanged("@long");
+				this.OnlongChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_picture", DbType="NVarChar(50)")]
+	public string picture
+	{
+		get
+		{
+			return this._picture;
+		}
+		set
+		{
+			if ((this._picture != value))
+			{
+				this.OnpictureChanging(value);
+				this.SendPropertyChanging();
+				this._picture = value;
+				this.SendPropertyChanged("picture");
+				this.OnpictureChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_step1", DbType="NVarChar(50)")]
+	public string step1
+	{
+		get
+		{
+			return this._step1;
+		}
+		set
+		{
+			if ((this._step1 != value))
+			{
+				this.Onstep1Changing(value);
+				this.SendPropertyChanging();
+				this._step1 = value;
+				this.SendPropertyChanged("step1");
+				this.Onstep1Changed();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_step2", DbType="NVarChar(50)")]
+	public string step2
+	{
+		get
+		{
+			return this._step2;
+		}
+		set
+		{
+			if ((this._step2 != value))
+			{
+				this.Onstep2Changing(value);
+				this.SendPropertyChanging();
+				this._step2 = value;
+				this.SendPropertyChanged("step2");
+				this.Onstep2Changed();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rule1", DbType="NVarChar(MAX)")]
+	public string rule1
+	{
+		get
+		{
+			return this._rule1;
+		}
+		set
+		{
+			if ((this._rule1 != value))
+			{
+				this.Onrule1Changing(value);
+				this.SendPropertyChanging();
+				this._rule1 = value;
+				this.SendPropertyChanged("rule1");
+				this.Onrule1Changed();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rule2", DbType="NVarChar(MAX)")]
+	public string rule2
+	{
+		get
+		{
+			return this._rule2;
+		}
+		set
+		{
+			if ((this._rule2 != value))
+			{
+				this.Onrule2Changing(value);
+				this.SendPropertyChanging();
+				this._rule2 = value;
+				this.SendPropertyChanged("rule2");
+				this.Onrule2Changed();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_link", DbType="NVarChar(MAX)")]
+	public string link
+	{
+		get
+		{
+			return this._link;
+		}
+		set
+		{
+			if ((this._link != value))
+			{
+				this.OnlinkChanging(value);
+				this.SendPropertyChanging();
+				this._link = value;
+				this.SendPropertyChanged("link");
+				this.OnlinkChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaskTBx_UserTaskTBx", Storage="_UserTaskTBxes", ThisKey="id", OtherKey="task_id")]
+	public EntitySet<UserTaskTBx> UserTaskTBxes
+	{
+		get
+		{
+			return this._UserTaskTBxes;
+		}
+		set
+		{
+			this._UserTaskTBxes.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TaskTBx_RuleTBx", Storage="_RuleTBxes", ThisKey="id", OtherKey="task_id")]
+	public EntitySet<RuleTBx> RuleTBxes
+	{
+		get
+		{
+			return this._RuleTBxes;
+		}
+		set
+		{
+			this._RuleTBxes.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserTypeTBx_TaskTBx", Storage="_UserTypeTBx", ThisKey="usertype_id", OtherKey="id", IsForeignKey=true)]
+	public UserTypeTBx UserTypeTBx
+	{
+		get
+		{
+			return this._UserTypeTBx.Entity;
+		}
+		set
+		{
+			UserTypeTBx previousValue = this._UserTypeTBx.Entity;
+			if (((previousValue != value) 
+						|| (this._UserTypeTBx.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._UserTypeTBx.Entity = null;
+					previousValue.TaskTBxes.Remove(this);
+				}
+				this._UserTypeTBx.Entity = value;
+				if ((value != null))
+				{
+					value.TaskTBxes.Add(this);
+					this._usertype_id = value.id;
+				}
+				else
+				{
+					this._usertype_id = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("UserTypeTBx");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_UserTaskTBxes(UserTaskTBx entity)
+	{
+		this.SendPropertyChanging();
+		entity.TaskTBx = this;
+	}
+	
+	private void detach_UserTaskTBxes(UserTaskTBx entity)
+	{
+		this.SendPropertyChanging();
+		entity.TaskTBx = null;
+	}
+	
+	private void attach_RuleTBxes(RuleTBx entity)
+	{
+		this.SendPropertyChanging();
+		entity.TaskTBx = this;
+	}
+	
+	private void detach_RuleTBxes(RuleTBx entity)
+	{
+		this.SendPropertyChanging();
+		entity.TaskTBx = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="trungle8_trungle8.QuotationsTBx")]
+public partial class QuotationsTBx : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _id;
+	
+	private string _title;
+	
+	private string _content;
+	
+	private System.Nullable<int> _status;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OntitleChanging(string value);
+    partial void OntitleChanged();
+    partial void OncontentChanging(string value);
+    partial void OncontentChanged();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    #endregion
+	
+	public QuotationsTBx()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int id
+	{
+		get
+		{
+			return this._id;
+		}
+		set
+		{
+			if ((this._id != value))
+			{
+				this.OnidChanging(value);
+				this.SendPropertyChanging();
+				this._id = value;
+				this.SendPropertyChanged("id");
+				this.OnidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(500)")]
+	public string title
+	{
+		get
+		{
+			return this._title;
+		}
+		set
+		{
+			if ((this._title != value))
+			{
+				this.OntitleChanging(value);
+				this.SendPropertyChanging();
+				this._title = value;
+				this.SendPropertyChanged("title");
+				this.OntitleChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_content", DbType="NVarChar(MAX)")]
+	public string content
+	{
+		get
+		{
+			return this._content;
+		}
+		set
+		{
+			if ((this._content != value))
+			{
+				this.OncontentChanging(value);
+				this.SendPropertyChanging();
+				this._content = value;
+				this.SendPropertyChanged("content");
+				this.OncontentChanged();
 			}
 		}
 	}

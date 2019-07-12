@@ -97,31 +97,14 @@
       <Association Name="StoreTBx_Staff_Store" Member="Staff_Stores" ThisKey="id" OtherKey="store_id" Type="Staff_Store" />
     </Type>
   </Table>
-  <Table Name="dbo.TaskTBx" Member="TaskTBxes">
-    <Type Name="TaskTBx">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="point" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="start_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="end_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="usertype_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="lat" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="long" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
-      <Association Name="TaskTBx_UserTaskTBx" Member="UserTaskTBxes" ThisKey="id" OtherKey="task_id" Type="UserTaskTBx" />
-      <Association Name="UserTypeTBx_TaskTBx" Member="UserTypeTBx" ThisKey="usertype_id" OtherKey="id" Type="UserTypeTBx" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.UserTaskTBx" Member="UserTaskTBxes">
     <Type Name="UserTaskTBx">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="task_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TaskTBx_UserTaskTBx" Member="TaskTBx" ThisKey="task_id" OtherKey="id" Type="TaskTBx" IsForeignKey="true" />
       <Association Name="UserTBx_UserTaskTBx" Member="UserTBx" ThisKey="user_id" OtherKey="id" Type="UserTBx" IsForeignKey="true" />
+      <Association Name="TaskTBx_UserTaskTBx" Member="TaskTBx" ThisKey="task_id" OtherKey="id" Type="TaskTBx" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.UserTBx" Member="UserTBxes">
@@ -167,6 +150,51 @@
       <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="banner" Type="System.String" DbType="NChar(200)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="trungle8_trungle8.RuleTBx" Member="RuleTBxes">
+    <Type Name="RuleTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="point" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="task_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="step" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="TaskTBx_RuleTBx" Member="TaskTBx" ThisKey="task_id" OtherKey="id" Type="TaskTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskTBx" Member="TaskTBxes">
+    <Type Name="TaskTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="point" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="start_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="end_time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="usertype_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lat" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="long" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="picture" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="step1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="step2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="rule1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rule2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="TaskTBx_UserTaskTBx" Member="UserTaskTBxes" ThisKey="id" OtherKey="task_id" Type="UserTaskTBx" />
+      <Association Name="TaskTBx_RuleTBx" Member="RuleTBxes" ThisKey="id" OtherKey="task_id" Type="RuleTBx" />
+      <Association Name="UserTypeTBx_TaskTBx" Member="UserTypeTBx" ThisKey="usertype_id" OtherKey="id" Type="UserTypeTBx" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="trungle8_trungle8.QuotationsTBx" Member="QuotationsTBxes">
+    <Type Name="QuotationsTBx">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>

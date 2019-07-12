@@ -74,7 +74,7 @@
     
     <div class="form-group">
         <a class="btn btn-danger" href="/cp/page/user/user.aspx">Cancel</a>
-        <button class="btn btn-info" id="i_submit" onclick="Submit(this,<%=user.id %>)">Submit</button>
+        <button class="btn btn-info" type="button" id="i_submit" onclick="Submit(this,<%=user.id %>)">Submit</button>
     </div>
         </form>
     <script>

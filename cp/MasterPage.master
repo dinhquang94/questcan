@@ -125,6 +125,20 @@
                    <span>TASK</span>
                 </a>
             </li>
+          <li class="nav-item <%if (name=="rule"||name=="add-rule"||name=="edit-rule")
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/rule/rule.aspx">
+                   <i class="fa fa-clock"></i>
+                   <span>RULE TASK</span>
+                </a>
+            </li>
+          <li class="nav-item <%if (name=="quote"||name=="add-quote"||name=="edit-quote")
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/quote/quote.aspx">
+                   <i class="fa fa-clock"></i>
+                   <span>QUOTES</span>
+                </a>
+            </li>
             <li class="nav-item <%if (name=="ads"||name=="add-ads"||name=="edit-ads")
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/ads/ads.aspx">

@@ -11,7 +11,7 @@ public partial class cp_MasterPage : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         name = System.IO.Path.GetFileName(Request.Url.AbsolutePath).Replace(".aspx", "").ToLower();
-        //if (Session["islogin"] == null || Session["islogin"].ToString() != "1")
-        //    Response.Redirect("/cp-login");
+        if (Session["islogin"] == null || Session["islogin"].ToString() != "1")
+            Response.Redirect("/cp/page/Login.aspx");
     }
 }

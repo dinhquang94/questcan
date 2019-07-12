@@ -21,7 +21,7 @@
          <textarea class="form-control tinymce" id="txtdescription" ><%=page.description%></textarea>
     </div>
     <div class="form-group">
-        <a class="btn btn-danger" href="/cp/page/news/news.aspx">Cancel</a>
+        <a class="btn btn-danger" href="/cp/page/pages/pages.aspx">Cancel</a>
         <button class="btn btn-info" id="i_submit" onclick="Submit(this,<%=page.id %>)">Submit</button>
     </div>
         </form>

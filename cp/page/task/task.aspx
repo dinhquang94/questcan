@@ -11,18 +11,25 @@
     </ol>
     <a class="btn btn-success" href="/cp/page/task/Add-task.aspx">Add Task</a>
     <p></p>
+    <div style="overflow-x:auto;">
     <table class="table table-bordered">
         <tbody >
             <tr>
                 <th class="text-center">ID</th>
                 <th class="text-center">Title</th>
-                <th class="text-center">Point</th>
+              <%--  <th class="text-center">Point</th>--%>
+               <%-- <th class="text-center">Step1</th>
+                <th class="text-center">Rule1</th>
+                <th class="text-center">Step2</th>
+                <th class="text-center">Rule2</th>--%>
+                <th class="text-center" width="200px">Picture</th>
                 <th class="text-center">Start Time</th>
                  <th class="text-center">End Time</th> 
-                 <th class="text-center">Latitude</th>
-                <th class="text-center">Longitude</th>
+                 <%--<th class="text-center">Latitude</th>
+                <th class="text-center">Longitude</th>--%>
                 <th class="text-center">Type</th>
-                <th class="text-center">Content</th>
+                <%--<th class="text-center">Content</th>--%>
+                 <%--<th class="text-center">Link</th>--%>
                 <th class="text-center">Description</th>
                 <th colspan="2" class="text-center">Action</th>
             </tr>
@@ -31,13 +38,21 @@
             <tr>
                 <td><%=listtask[i].id%></td>
                   <td><%=listtask[i].title%></td>
-                <td><%=listtask[i].point%></td>
+              <%--  <td><%=listtask[i].point%></td>--%>
+               <%-- <td><%=listtask[i].step1%></td>
+                <td><%=listtask[i].rule1%></td>
+                <td><%=listtask[i].step2%></td>
+                <td><%=listtask[i].rule2%></td>--%>
+                <td>
+                    <img src="<%=listtask[i].picture %>" width="100%" />
+                </td>
                 <td><%=listtask[i].start_time%></td>
                  <td><%=listtask[i].end_time%></td>
-                 <td><%=listtask[i].lat%></td>
-                 <td><%=listtask[i].@long%></td>
+                <%-- <td><%=listtask[i].lat%></td>
+                 <td><%=listtask[i].@long%></td>--%>
                  <td><%=listtask[i].UserTypeTBx.name%></td>
-                 <td><%=listtask[i].content%></td>
+                 <%--<td><%=listtask[i].content%></td>--%>
+               <%-- <td><%=listtask[i].link%></td>--%>
                  <td><%=listtask[i].description%></td>
                 <td class="text-center">
                     <a class="btn btn-info" href="/cp/page/task/Edit-task.aspx?id=<%=listtask[i].id %>">
@@ -51,7 +66,7 @@
             <%} %>
         </tbody>
     </table>
-
+        </div>
      <script>
         function Delete(input, id) {
             alertify.confirm('Are you sure Delete', function () {

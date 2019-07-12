@@ -11,6 +11,7 @@
     </ol>
     <a class="btn btn-success" href="/cp/page/pages/Add-pages.aspx">Add Page</a>
     <p></p>
+     <div style="overflow-x:auto;">
     <table class="table table-bordered">
         <tbody >
             <tr>
@@ -48,6 +49,7 @@
             <%} %>
         </tbody>
     </table>
+         </div>
 
   <%--   <script>
         function Delete(input, id) {

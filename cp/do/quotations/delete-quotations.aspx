@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="delete-quotations.aspx.cs" Inherits="cp_do_quotations_delete_quotations" %>
